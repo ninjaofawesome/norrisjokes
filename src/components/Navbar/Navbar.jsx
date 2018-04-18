@@ -48,7 +48,10 @@ class Navbar extends Component {
           className='navbar__menu-item'
           key={`nav-list--${item.id}`}
         >
-          <Link to={item.url}>
+          <Link
+            to={item.url}
+            onClick={() => this.menuOpen()}
+          >
             {item.name}
           </Link>
         </li>
