@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
@@ -30,12 +31,14 @@ class Navbar extends Component {
   menuItems() {
     const dataArr = [
       {
-        name: 'test',
+        name: 'home',
         id: 1,
+        url: '/home',
       },
       {
-        name: 'test other',
+        name: 'about',
         id: 2,
+        url: '/about',
       },
     ];
 
@@ -45,7 +48,9 @@ class Navbar extends Component {
           className='navbar__menu-item'
           key={`nav-list--${item.id}`}
         >
-          {item.name}
+          <Link to={item.url}>
+            {item.name}
+          </Link>
         </li>
       );
     });
