@@ -1,9 +1,10 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+// General Styling
+@import './stylesheets/variables';
+@import './stylesheets/mixins';
+@import './stylesheets/index';
 
-.app {
-  text-align: center;
-}
+// Pages
+@import './pages/App/App';
+
+// Components
+@import './components/Navbar/Navbar';
