@@ -65,7 +65,7 @@ class Navbar extends Component {
         Menu
         </div>
         <div className={menuClasses(open)} >
-          <ul className='navbar__menu-list' >
+          <ul className='navbar__menu' >
            {this.menuItems()}
           </ul>
         </div>

@@ -19,8 +19,9 @@ body {
   border: 1px solid #141414;
   cursor: pointer; }
 
-.navbar__menu--open {
-  display: block; }
-
-.navbar__menu--closed {
-  display: none; }
+.navbar__menu {
+  list-style-type: none; }
+  .navbar__menu--open {
+    display: block; }
+  .navbar__menu--closed {
+    display: none; }
