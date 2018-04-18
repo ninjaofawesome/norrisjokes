@@ -1,0 +1,18 @@
+.navbar {
+  &__menu-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid $black;
+    cursor: pointer;
+  }
+
+  &__menu {
+    &--open {
+      display: block;
+    }
+
+    &--closed {
+      display: none;
+    }
+  }
+}
