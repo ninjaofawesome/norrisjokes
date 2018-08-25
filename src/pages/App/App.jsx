@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../../index.css';
+
+import styles from './App.css';
 
 class App extends Component {
   constructor() {
@@ -55,7 +56,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className='app'>
+      <div className={styles.app}>
         <p>Hello World</p>
         <p>{ this.state.randomJoke }</p>
         <ul>
