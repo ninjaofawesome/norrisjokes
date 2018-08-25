@@ -184,6 +184,7 @@ module.exports = {
                         minimize: true,
                         sourceMap: shouldUseSourceMap,
                         modules: true,
+                        amelCase: 'dashes',
                         localIndentName: '[name]__[local]__[hash:base64:5]',
                       },
                     },

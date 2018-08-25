@@ -57,8 +57,8 @@ class App extends Component {
   render() {
     return (
       <div className={styles.app}>
-        <p>Hello World</p>
-        <p>{ this.state.randomJoke }</p>
+        <p className={styles.appText}>Hello World</p>
+        <p className={styles.appText}>{ this.state.randomJoke }</p>
         <ul>
           {this.showJokeCategories()}
         </ul>
