@@ -168,6 +168,7 @@ module.exports = {
                   minimize: true,
                   sourcemap: true,
                   modules: true,
+                  camelCase: 'dashes',
                   llocalIdentName: '[name]__[local]',
                 },
               },
