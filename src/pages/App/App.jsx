@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-import styles from './App.css';
+import styles from '../../stylesheets/Master.css';
 
 class App extends Component {
   constructor() {

@@ -182,10 +182,10 @@ module.exports = {
                       options: {
                         importLoaders: 1,
                         minimize: true,
-                        sourceMap: shouldUseSourceMap,
+                        sourcemap: true,
                         modules: true,
-                        amelCase: 'dashes',
-                        localIndentName: '[name]__[local]__[hash:base64:5]',
+                        camelCase: 'dashes',
+                        localIdentName: '[name]__[local]',
                       },
                     },
                     {
