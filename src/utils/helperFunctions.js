@@ -24,7 +24,7 @@ const handleTextResponse = (response) => {
       return Promise.reject({
         status: response.status,
         statusText: response.statusText,
-        err: text
+        err: text,
       });
     }
   });
