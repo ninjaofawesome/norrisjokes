@@ -32,7 +32,6 @@ class App extends Component {
       this.setState({ categories: data})
     })
     .catch(error => console.log(error));
-
   }
 
   componentDidMount() {
