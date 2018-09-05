@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'found';
 import styles from '../../stylesheets/Master.css';
 import { handleResponse } from '../../utils/helperFunctions.js';
 
@@ -59,6 +60,7 @@ class App extends Component {
         <ul>
           {this.showJokeCategories()}
         </ul>
+        <Link to='/categories'>Categories</Link>
       </div>
     );
   }
