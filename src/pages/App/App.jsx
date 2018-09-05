@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../../stylesheets/Master.css';
+import { handleResponse } from '../../utils/helperFunctions.js';
 
 class App extends Component {
   constructor() {
@@ -17,23 +18,20 @@ class App extends Component {
 
   randomJokeRequest() {
     fetch('https://api.chucknorris.io/jokes/random')
-    .then(results => {
-      return results.json();
-    })
+    .then(handleResponse)
     .then(data => {
-      this.setState({ randomJoke: data.value });
-    });
+      this.setState({ randomJoke: data.value });  
+    })
+    .catch(error => console.log(error));
   }
 
   getJokeCategories() {
     fetch('https://api.chucknorris.io/jokes/categories')
-    .then(results => {
-      return results.json();
-    })
+    .then(handleResponse)
     .then(data => {
-     this.setState({ categories: data})
-    });
-
+      this.setState({ categories: data})
+    })
+    .catch(error => console.log(error));
   }
 
   componentDidMount() {

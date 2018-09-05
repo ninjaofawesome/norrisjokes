@@ -169,7 +169,7 @@ module.exports = {
                   sourcemap: true,
                   modules: true,
                   camelCase: 'dashes',
-                  llocalIdentName: '[name]__[local]',
+                  localIdentName: '[name]__[local]',
                 },
               },
               {
