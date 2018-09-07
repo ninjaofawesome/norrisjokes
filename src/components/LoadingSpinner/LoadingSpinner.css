@@ -1,26 +1,22 @@
 @keyframes spinner {
   0% {
-    transform: translate3d(-50%, -50%, 0) rotate(0deg); }
+    transform: rotate(0deg); }
   100% {
-    transform: translate3d(-50%, -50%, 0) rotate(360deg); } }
+    transform: rotate(360deg); } }
 
 .spinner {
   height: 100px;
-  opacity: 1;
-  position: relative;
-  transition: opacity linear 0.1s; }
+  width: 100%;
+  position: relative; }
   .spinner::before {
-    animation: 2s linear infinite spinner;
-    border: solid 3px #141414;
+    content: "";
+    animation: spinner 1s linear infinite;
+    border: solid 10px #141414;
     border-bottom-color: #727272;
     border-radius: 50%;
-    content: "";
-    height: 40px;
-    left: 50%;
-    opacity: inherit;
+    height: 100px;
+    width: 100px;
     position: absolute;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    transform-origin: center;
-    width: 40px;
-    will-change: transform; }
+    left: 50%;
+    top: 50;
+    margin-left: -50px; }
