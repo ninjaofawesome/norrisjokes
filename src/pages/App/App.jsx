@@ -4,6 +4,8 @@ import Button from '../../components/Button/Button';
 import styles from './App.css';
 import { handleResponse } from '../../utils/helperFunctions.js';
 
+import styles from './App.css';
+
 class App extends Component {
   constructor() {
     super();
