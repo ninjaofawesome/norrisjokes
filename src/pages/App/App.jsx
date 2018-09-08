@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'found';
-import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import Button from '../../components/Button/Button';
 import styles from './App.css';
 import { handleResponse } from '../../utils/helperFunctions.js';
 
@@ -57,7 +57,7 @@ class App extends Component {
     return (
       <div className={styles.app}>
         <p className={styles.appText}>Hello World</p>
-        <LoadingSpinner />
+        <Button copy='click' />
         <p className={styles.appText}>{ this.state.randomJoke }</p>
         <ul>
           {this.showJokeCategories()}
