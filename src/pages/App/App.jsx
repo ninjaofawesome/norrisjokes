@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'found';
 import Button from '../../components/Button/Button';
-import styles from './App.css';
 import { handleResponse } from '../../utils/helperFunctions.js';
 
 import styles from './App.css';
