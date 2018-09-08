@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import styles from './NavigationButton.css';
+import styles from './ActionButton.css';
 
 const buttonStyles = props => {
   return cx({
@@ -15,12 +15,12 @@ const buttonStyles = props => {
 
 const ActionButton = props => {
   return (
-    <Button
+    <button
       onClick={props.action}
       className={buttonStyles(props)}
     >
       {props.copy}
-    </Button>
+    </button>
   );
 };
 
@@ -36,4 +36,4 @@ ActionButton.defaultProps = {
   color: 'black',
 };
 
-export default NavigationButton;
+export default ActionButton;
