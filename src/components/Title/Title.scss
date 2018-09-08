@@ -1,4 +1,4 @@
-@include '../../stylesheets/master.scss';
+@import '../../stylesheets/master.scss';
 
 .extra-bold-title {
   @include TitleExtraBold($black);

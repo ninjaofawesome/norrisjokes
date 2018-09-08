@@ -59,8 +59,9 @@ class App extends Component {
       <div className={styles.app}>
         <Title
           copy='Norrisjokes'
+          header={1}
           size='3em'
-          type='extra-bold' 
+          type='bold' 
         />
         <p className={styles.appText}>{ this.state.randomJoke }</p>
         <ul>
