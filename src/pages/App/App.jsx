@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'found';
 import Button from '../../components/Button/Button';
 import { handleResponse } from '../../utils/helperFunctions.js';
 
 import styles from './App.css';
+
+const alertFunc = () => (
+  alert('you clicked the button!')
+);
 
 class App extends Component {
   constructor() {
@@ -58,17 +61,27 @@ class App extends Component {
     return (
       <div className={styles.app}>
         <p className={styles.appText}>Hello World</p>
-        <Button 
-          content='click' 
-          type='navigation'
-          location='categories'
-          color='black'
-        />
+        <div className={styles.buttonWrapper}>
+          <Button 
+            content='categories' 
+            type='navigation'
+            location='categories'
+            color='black'
+          />
+        </div>
+
+        <div className={styles.buttonWrapper}>
+          <Button 
+            content='click this' 
+            action={alertFunc}
+            type='action'
+            color='white'
+          />
+        </div>
         <p className={styles.appText}>{ this.state.randomJoke }</p>
         <ul>
           {this.showJokeCategories()}
         </ul>
-        <Link to='/categories'>Categories</Link>
       </div>
     );
   }

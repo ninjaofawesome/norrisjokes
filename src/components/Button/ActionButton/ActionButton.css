@@ -1,0 +1,110 @@
+/* 
+$buttonProps: (
+  backgroundColor: [SOMEVALUE],
+  border: [SOMEVALUE],
+  color: [SOMEVALUE],
+  backgroundHover: [SOMEVALUE],
+  borderHover: [SOMEVALUE],
+  colorHover: [SOMEVALUE],
+);
+*/
+.black-button {
+  font-weight: 400;
+  color: #fff;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.1em;
+  width: 100%;
+  height: 50px;
+  display: block;
+  background-color: #141414;
+  border: 1px solid #141414;
+  font-size: 1.5em;
+  line-height: 50px;
+  vertical-align: middle;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer; }
+  .black-button:active, .black-button:focus, .black-button:hover {
+    -webkit-transition: all 350ms ease-out;
+    -moz-transition: all 350ms ease-out;
+    -o-transition: all 350ms ease-out;
+    transition: all 350ms ease-out;
+    outline: 0;
+    background-color: #727272;
+    text-decoration: none; }
+
+.gray-button {
+  font-weight: 400;
+  color: #fff;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.1em;
+  width: 100%;
+  height: 50px;
+  display: block;
+  background-color: #727272;
+  border: 1px solid #141414;
+  font-size: 1.5em;
+  line-height: 50px;
+  vertical-align: middle;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer; }
+  .gray-button:active, .gray-button:focus, .gray-button:hover {
+    -webkit-transition: all 350ms ease-out;
+    -moz-transition: all 350ms ease-out;
+    -o-transition: all 350ms ease-out;
+    transition: all 350ms ease-out;
+    outline: 0;
+    background-color: #595959;
+    text-decoration: none; }
+
+.white-button {
+  font-weight: 400;
+  color: #141414;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.1em;
+  width: 100%;
+  height: 50px;
+  display: block;
+  background-color: #fff;
+  border: 1px solid #141414;
+  font-size: 1.5em;
+  line-height: 50px;
+  vertical-align: middle;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer; }
+  .white-button:active, .white-button:focus, .white-button:hover {
+    -webkit-transition: all 350ms ease-out;
+    -moz-transition: all 350ms ease-out;
+    -o-transition: all 350ms ease-out;
+    transition: all 350ms ease-out;
+    outline: 0;
+    background-color: #727272;
+    text-decoration: none; }
+
+.custom-button {
+  font-weight: 400;
+  color: #fff;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.1em;
+  width: 100%;
+  height: 50px;
+  display: block;
+  background-color: #727272;
+  border: 1px solid #727272;
+  font-size: 1.5em;
+  line-height: 50px;
+  vertical-align: middle;
+  text-decoration: none;
+  border-radius: 5px; }
+  .custom-button:active, .custom-button:focus, .custom-button:hover {
+    -webkit-transition: all 350ms ease-out;
+    -moz-transition: all 350ms ease-out;
+    -o-transition: all 350ms ease-out;
+    transition: all 350ms ease-out;
+    outline: 0;
+    background-color: #141414;
+    border: 1px solid #727272;
+    color: #727272;
+    text-decoration: none; }

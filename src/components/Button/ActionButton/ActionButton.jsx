@@ -19,19 +19,19 @@ const ActionButton = props => {
       onClick={props.action}
       className={buttonStyles(props)}
     >
-      {props.copy}
+      {props.content}
     </button>
   );
 };
 
 ActionButton.propTypes = {
-  copy: PropTypes.string,
+  content: PropTypes.string,
   action: PropTypes.func,
   color: PropTypes.oneOf([ 'black', 'white', 'gray', 'custom']),
 };
 
 ActionButton.defaultProps = {
-  copy: '',
+  content: '',
   action: () => {},
   color: 'black',
 };

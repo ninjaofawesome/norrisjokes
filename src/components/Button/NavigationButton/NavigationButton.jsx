@@ -5,34 +5,35 @@ import { Link } from 'found';
 
 import styles from './NavigationButton.css';
 
-const buttonStyles = props => {
+const buttonStyles = ({ color }) => {
   return cx({
-    [styles.blackButton]: props.color === 'black',
-    [styles.grayButton]: props.color === 'gray',
-    [styles.whiteButton]: props.color === 'white',
-    [styles.customButton]: props.color === 'custom',
+    [styles.blackButton]: color === 'black',
+    [styles.grayButton]: color === 'gray',
+    [styles.whiteButton]: color === 'white',
+    [styles.customButton]: color === 'custom',
   })
 }
 
 const NavigationButton = props => {
+  console.log(props.copy)
   return (
     <Link
       to={`/${props.location}`}
-      className={buttonStyles(props)}
+      className={ buttonStyles(props) }
     >
-      {props.copy}
+      { props.content }
     </Link>
   );
 };
 
 NavigationButton.propTypes = {
-  copy: PropTypes.string,
+  content: PropTypes.string,
   location: PropTypes.string,
   color: PropTypes.oneOf([ 'black', 'white', 'gray', 'custom']),
 };
 
 NavigationButton.defaultProps = {
-  copy: '',
+  content: '',
   location: '',
   color: 'black',
 };
