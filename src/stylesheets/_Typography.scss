@@ -1,0 +1,25 @@
+@import './Variables.scss';
+
+@mixin Type400($color: $black) {
+  font-weight: 400;
+  color: $color;
+  font-family: $sans-serif;
+}
+
+@mixin Type500($color: $black) {
+  font-weight: 500;
+  color: $color;
+  font-family: $sans-serif;
+}
+
+@mixin Type700($color: $black) {
+  font-weight: 700;
+  color: $color;
+  font-family: $sans-serif;
+}
+
+@mixin Type900($color: $black) {
+  font-weight: 400;
+  color: $color;
+  font-family: $sans-serif;
+}

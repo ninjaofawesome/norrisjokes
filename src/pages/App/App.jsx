@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'found';
-import styles from '../../stylesheets/Master.css';
+import styles from './App.css';
 import { handleResponse } from '../../utils/helperFunctions.js';
 
 class App extends Component {

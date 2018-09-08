@@ -1,0 +1,14 @@
+@include '../../stylesheets/master.scss';
+
+.extra-bold-title {
+  @include TitleExtraBold($black);
+}
+
+.bold-title {
+  @include TitleBold($black);
+}
+
+.light-title {
+  @include BodyType($black);
+  text-align: center;
+}
