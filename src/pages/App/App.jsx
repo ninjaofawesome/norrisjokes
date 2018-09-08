@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'found';
-import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
-import styles from './App.css';
 import { handleResponse } from '../../utils/helperFunctions.js';
+import Title from '../../components/Title/Title';
+
+import styles from './App.css';
 
 class App extends Component {
   constructor() {
@@ -56,8 +57,12 @@ class App extends Component {
   render() {
     return (
       <div className={styles.app}>
-        <p className={styles.appText}>Hello World</p>
-        <LoadingSpinner />
+        <Title
+          copy='Norrisjokes'
+          header={1}
+          size='3em'
+          type='bold' 
+        />
         <p className={styles.appText}>{ this.state.randomJoke }</p>
         <ul>
           {this.showJokeCategories()}

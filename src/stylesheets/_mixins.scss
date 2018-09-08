@@ -1,0 +1,19 @@
+@import './Typography.scss';
+
+//type
+@mixin TitleBold($typeColor: $black) {
+  @include Type700($typeColor);
+  line-height: 1.1em;
+  text-align: center;
+}
+
+@mixin TitleExtraBold($typeColor: $black) {
+  @include Type900($typeColor);
+  line-height: 1.1em;
+  text-align: center;
+}
+
+@mixin BodyType($typeColor: $black) {
+  @include Type400($typeColor);
+  line-height: 1.1em;
+}
