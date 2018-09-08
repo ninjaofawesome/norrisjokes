@@ -1,3 +1,13 @@
+/* 
+$buttonProps: (
+  backgroundColor: [SOMEVALUE],
+  border: [SOMEVALUE],
+  color: [SOMEVALUE],
+  backgroundHover: [SOMEVALUE],
+  borderHover: [SOMEVALUE],
+  colorHover: [SOMEVALUE],
+);
+*/
 .extra-bold-title {
   font-weight: 900;
   color: #141414;

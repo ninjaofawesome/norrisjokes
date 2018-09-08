@@ -58,7 +58,12 @@ class App extends Component {
     return (
       <div className={styles.app}>
         <p className={styles.appText}>Hello World</p>
-        <Button copy='click' />
+        <Button 
+          content='click' 
+          type='navigation'
+          location='categories'
+          color='black'
+        />
         <p className={styles.appText}>{ this.state.randomJoke }</p>
         <ul>
           {this.showJokeCategories()}

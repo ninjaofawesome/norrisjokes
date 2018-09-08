@@ -1,19 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Button.css';
+import NavigationButton from './NavigationButton/NavigationButton';
+import ActionButton from './ActionButton/ActionButton';
+
 
 const Button = props => {
-  return (
-    <button className={styles.button}>{props.copy}</button>
-  );
-}
+  switch(props.type) {
+    case 'navigation':
+      return <NavigationButton {...props} />
+    case 'action':
+      return <ActionButton {...props} />
+    default:
+      return null;
+  }
+};
 
 Button.propTypes = {
-  copy: PropTypes.string,
+  type: PropTypes.string,
 };
 
 Button.defaultProps = {
-  copy: '',
+  type: '',
 };
 
 export default Button;
