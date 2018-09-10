@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'found';
+import Button from '../../components/Button/Button';
 import { handleResponse } from '../../utils/helperFunctions.js';
-import Title from '../../components/Title/Title';
 
 import styles from './App.css';
+
+const alertFunc = () => (
+  alert('you clicked the button!')
+);
 
 class App extends Component {
   constructor() {
@@ -57,17 +60,28 @@ class App extends Component {
   render() {
     return (
       <div className={styles.app}>
-        <Title
-          copy='Norrisjokes'
-          header={1}
-          size='3em'
-          type='bold' 
-        />
+        <p className={styles.appText}>Hello World</p>
+        <div className={styles.buttonWrapper}>
+          <Button 
+            content='categories' 
+            type='navigation'
+            location='categories'
+            color='black'
+          />
+        </div>
+
+        <div className={styles.buttonWrapper}>
+          <Button 
+            content='click this' 
+            action={alertFunc}
+            type='action'
+            color='white'
+          />
+        </div>
         <p className={styles.appText}>{ this.state.randomJoke }</p>
         <ul>
           {this.showJokeCategories()}
         </ul>
-        <Link to='/categories'>Categories</Link>
       </div>
     );
   }

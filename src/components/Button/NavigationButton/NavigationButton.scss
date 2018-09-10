@@ -1,0 +1,27 @@
+@import '../../../stylesheets/Master.scss';
+
+.black-button {
+  @include BlackButton();
+}
+
+.gray-button {
+  @include GrayButton();
+}
+
+.white-button {
+  @include WhiteButton();
+}
+
+.custom-button {
+  // this is just for example, use whatever you want.
+  $buttonProps: (
+    backgroundColor: $gray,
+    border: $gray,
+    color: $white,
+    backgroundHover: $black,
+    borderHover: $gray,
+    colorHover: $gray,
+  );
+
+  @include CustomButton($buttonProps);
+}

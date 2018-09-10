@@ -4,6 +4,20 @@
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* 
+$buttonProps: (
+  backgroundColor: [SOMEVALUE],
+  border: [SOMEVALUE],
+  color: [SOMEVALUE],
+  backgroundHover: [SOMEVALUE],
+  borderHover: [SOMEVALUE],
+  colorHover: [SOMEVALUE],
+);
+*/
 body,
 html {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -17,3 +31,9 @@ html {
 .app-text {
   font-weight: 700;
   font-size: 1.25em; }
+
+.button-wrapper {
+  height: auto;
+  width: 200px;
+  display: block;
+  margin: 5px auto; }
