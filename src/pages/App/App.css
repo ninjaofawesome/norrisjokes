@@ -6,8 +6,6 @@
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
-/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
-/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 /* 
 $buttonProps: (
   backgroundColor: [SOMEVALUE],
@@ -26,6 +24,10 @@ html {
   background-color: #fff; }
 
 .app {
+  display: grid;
+  grid-template-columns: repeat(10, 100px);
+  column-gap: 10px;
+  row-gap: 1em;
   text-align: center; }
 
 .app-text {
@@ -37,3 +39,31 @@ html {
   width: 200px;
   display: block;
   margin: 5px auto; }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .app {
+    display: grid;
+    grid-template-columns: repeat(8, 100px);
+    column-gap: 10px;
+    row-gap: 1em; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .app {
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    column-gap: 10px;
+    row-gap: 1em; } }
+
+@media (min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .app {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    column-gap: 10px;
+    row-gap: 1em; } }
+
+@media (min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .app {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    column-gap: 10px;
+    row-gap: 1em; } }

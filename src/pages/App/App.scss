@@ -9,6 +9,7 @@ html {
 }
 
 .app {
+  @include GridSystem($desktopCols);
   text-align: center;
 }
 
@@ -21,5 +22,30 @@ html {
   height: auto;
   width: 200px;
   display: block;
-  margin: 5px auto;
+  margin: $xsmall auto;
+}
+
+
+@media #{$tablet} {
+  .app {
+    @include GridSystem($tabletCols);
+  }
+}
+
+@media #{$tabletPortrait} {
+  .app {
+    @include GridSystem($tabletPortCols);
+  }
+}
+
+@media #{$mobile} {
+  .app {
+    @include GridSystem($mobileCols);
+  }
+}
+
+@media #{$mobilePortrait} {
+  .app {
+    @include GridSystem($mobilePortCols);
+  }
 }

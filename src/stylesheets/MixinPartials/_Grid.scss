@@ -1,0 +1,7 @@
+@mixin GridSystem($cols: 10) {
+  display: grid;
+  grid-template-columns: repeat($cols, 100px);
+  column-gap: $small;
+  row-gap: 1em;
+}
+

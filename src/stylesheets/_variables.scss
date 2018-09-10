@@ -22,21 +22,28 @@ $wrapperWidthTabletPortrait: 720px;
 $wrapperWidthMobile: 600px;
 $wrapperWidthMobilePortrait: 360px;
 
+// grid columns:  These are for the page/device layout
+$desktopCols: 10;
+$tabletCols: 8;
+$tabletPortCols: 6;
+$mobileCols: 5;
+$mobilePortCols: 3;
+
 // Breakpoints
 
-$desktop: only screen and (min-width: 1025px);
+$desktop: screen and (min-width: 1025px);
 
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
 
-$tablet: only screen and (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2);
+$tablet: 'screen and (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2)';
 
-$tabletPortrait: only screen and (min-width: 768px) and (max-width: 1024px)  and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2);
+$tabletPortrait: 'screen and (min-width: 768px) and (max-width: 1024px)  and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2)';
 
-$tabletLandscape: only screen and (min-width: 768px) and (max-width: 1024px)  and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2);
+$tabletLandscape: 'screen and (min-width: 768px) and (max-width: 1024px)  and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)';
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
-$mobile: only screen and (min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2);
+$mobile: '(min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2)';
 
-$mobilePortrait: only screen and (min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait);
+$mobilePortrait: '(min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)';
 
-$mobileLandscape: only screen and (min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape);
+$mobileLandscape: '(min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)';

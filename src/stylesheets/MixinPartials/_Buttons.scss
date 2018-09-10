@@ -26,7 +26,7 @@ $buttonProps: (
   line-height: 50px;
   vertical-align: middle;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: $xsmall;
 
   &:active,
   &:focus,
@@ -53,7 +53,7 @@ $buttonProps: (
   line-height: 50px;
   vertical-align: middle;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: $xsmall;
   cursor: pointer;
 
   &:active,
@@ -79,7 +79,7 @@ $buttonProps: (
   line-height: 50px;
   vertical-align: middle;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: $xsmall;
   cursor: pointer;
 
   &:active,
@@ -105,7 +105,7 @@ $buttonProps: (
   line-height: 50px;
   vertical-align: middle;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: $xsmall;
   cursor: pointer;
 
   &:active,
