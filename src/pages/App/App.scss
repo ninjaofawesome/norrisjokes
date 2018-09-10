@@ -10,12 +10,13 @@ html {
 
 .app {
   @include GridSystem($desktopCols);
-  text-align: center;
 }
 
 .app-text {
   font-weight: 700;
   font-size: 1.25em;
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
 }
 
 .button-wrapper {

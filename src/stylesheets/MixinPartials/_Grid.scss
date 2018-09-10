@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat($cols, 100px);
   column-gap: $small;
-  row-gap: 1em;
+  //grid-template-columns: repeat($cols, 10fr);
+  //row-gap: 1em;
 }
 
