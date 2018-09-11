@@ -9,7 +9,7 @@ html {
 }
 
 .app {
-  @include GridSystem($desktopCols);
+  @include GridSystem(10);
 }
 
 .app-text {
@@ -29,24 +29,30 @@ html {
 
 @media #{$tablet} {
   .app {
-    @include GridSystem($tabletCols);
+    @include GridSystem(8);
   }
 }
 
 @media #{$tabletPortrait} {
   .app {
-    @include GridSystem($tabletPortCols);
+    @include GridSystem(6);
+  }
+}
+
+@media #{$phablet} {
+  .app {
+    @include GridSystem(6);
   }
 }
 
 @media #{$mobile} {
   .app {
-    @include GridSystem($mobileCols);
+    @include GridSystem(5);
   }
 }
 
 @media #{$mobilePortrait} {
   .app {
-    @include GridSystem($mobilePortCols);
+    @include GridSystem(3);
   }
 }
