@@ -15,19 +15,43 @@ $medium: 20px;
 $large: 40px;
 $xlarge: 80px;
 
-// grid measurements
-$wrapperWidthDesktop: 1200px;
-$wrapperWidthTablet: 960px;
-$wrapperWidthTabletPortrait: 720px;
-$wrapperWidthMobile: 600px;
-$wrapperWidthMobilePortrait: 360px;
 
-// grid columns:  These are for the page/device layout
-$desktopCols: 10;
-$tabletCols: 8;
-$tabletPortCols: 6;
-$mobileCols: 5;
-$mobilePortCols: 3;
+//  grid maps:
+$desktopGrid: (
+  cols: 10,
+  width: 100px,
+  colGap: $small,
+);
+
+$tabletGrid: (
+  cols: 10,
+  width: 90px,
+  colGap: $small,
+);
+
+$tabletPortraitGrid: (
+  cols: 10,
+  width: 60px,
+  colGap: $small,
+);
+
+$phabletGrid: (
+  cols: 10,
+  width: 55px,
+  colGap: $xsmall,
+);
+
+$mobileGrid: (
+  cols: 10,
+  width: 45px,
+  colGap: $xsmall,
+);
+
+$mobilePortraitGrid: (
+  cols: 10,
+  width: 25px,
+  colGap: $xsmall,
+);
 
 // Breakpoints
 

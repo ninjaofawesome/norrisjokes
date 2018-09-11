@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import Button from '../../components/Button/Button';
+import Title from '../../components/Title/Title';
 import { handleResponse } from '../../utils/helperFunctions.js';
 
 import styles from './App.css';
-
-const alertFunc = () => (
-  alert('you clicked the button!')
-);
 
 class App extends Component {
   constructor() {
@@ -60,28 +56,22 @@ class App extends Component {
   render() {
     return (
       <div className={styles.app}>
-        <p className={styles.appText}>Hello World</p>
-        <div className={styles.buttonWrapper}>
-          <Button 
-            content='categories' 
-            type='navigation'
-            location='categories'
-            color='black'
+        <div className={styles.appTitleContainer}>
+          <Title
+            type='bold'
+            header={1}
+            size='3em'
+            copy='NorrisJokes'
           />
         </div>
-
-        <div className={styles.buttonWrapper}>
-          <Button 
-            content='click this' 
-            action={alertFunc}
-            type='action'
-            color='white'
-          />
+        <div className={styles.appTextContainer}>
+          <p>{ this.state.randomJoke }</p>
         </div>
-        <p className={styles.appText}>{ this.state.randomJoke }</p>
-        <ul>
-          {this.showJokeCategories()}
-        </ul>
+        <div classname={styles.appListContainer}>
+          <ul>
+            {this.showJokeCategories()}
+          </ul>
+        </div>
       </div>
     );
   }
