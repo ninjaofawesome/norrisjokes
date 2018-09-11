@@ -20,12 +20,18 @@ html {
 
 .app-text-container {
   grid-column: 1/11;
-  text-align: center;
 }
 
 .app-list-container{
-  grid-column: 5/7;
+  grid-column: 1/2;
+}
+
+.app-joke {
   text-align: center;
+}
+
+.app-list {
+  list-style-type: none;
 }
 
 @media #{$tablet} {

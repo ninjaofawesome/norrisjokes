@@ -65,10 +65,10 @@ class App extends Component {
           />
         </div>
         <div className={styles.appTextContainer}>
-          <p>{ this.state.randomJoke }</p>
+          <p class={styles.appJoke}>{ this.state.randomJoke }</p>
         </div>
         <div classname={styles.appListContainer}>
-          <ul>
+          <ul className={styles.appList}>
             {this.showJokeCategories()}
           </ul>
         </div>

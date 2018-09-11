@@ -41,12 +41,16 @@ html {
   text-align: center; }
 
 .app-text-container {
-  grid-column: 1/11;
-  text-align: center; }
+  grid-column: 1/11; }
 
 .app-list-container {
-  grid-column: 5/7;
+  grid-column: 1/2; }
+
+.app-joke {
   text-align: center; }
+
+.app-list {
+  list-style-type: none; }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   .app {
