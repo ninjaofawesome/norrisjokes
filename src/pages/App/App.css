@@ -4,12 +4,20 @@
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
 /* ------------- Phablet ------------------- */
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+p {
+  text-align: justify;
+  justify-content: inter-word; }
+
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
 /* ------------- Phablet ------------------- */
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
 /* ------------- Phablet ------------------- */
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+p {
+  text-align: justify;
+  justify-content: inter-word; }
+
 /* 
 $buttonProps: (
   backgroundColor: [SOMEVALUE],
@@ -41,7 +49,7 @@ html {
   text-align: center; }
 
 .app-text-container {
-  grid-column: 1/11; }
+  grid-column: 5/8; }
 
 .app-list-container {
   grid-column: 1/2; }

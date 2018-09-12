@@ -1,5 +1,11 @@
 @import '../Variables.scss';
 
+// basic styles
+p {
+ text-align: justify;
+ justify-content: inter-word; 
+}
+
 @mixin Type400($color: $black) {
   font-weight: 400;
   color: $color;

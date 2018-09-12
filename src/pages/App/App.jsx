@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Title from '../../components/Title/Title';
+import TextBox from '../../components/TextBox/TextBox';
 import { handleResponse } from '../../utils/helperFunctions.js';
 
 import styles from './App.css';
@@ -56,18 +57,21 @@ class App extends Component {
   render() {
     return (
       <div className={styles.app}>
-        <div className={styles.appTitleContainer}>
-          <Title
-            type='bold'
-            header={1}
-            size='3em'
-            copy='NorrisJokes'
-          />
+        <div className={styles.appTextContainer}>
+          <TextBox>
+            <Title
+              type='bold'
+              header={1}
+              size='3em'
+              copy='NorrisJokes'
+            />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed pulvinar diam. Praesent feugiat sem ac ante aliquet, mattis dapibus elit consequat. Praesent elit magna, ullamcorper ac sollicitudin vel, ullamcorper sit amet libero. Nullam sed nisi quis nisl lacinia luctus id pretium tortor. Suspendisse potenti. Phasellus vehicula vitae dui non dignissim. Nulla molestie metus ut nisl euismod mollis. Aliquam tempus dui ac tellus gravida sollicitudin. Integer lobortis nibh mattis mi posuere, at pellentesque ipsum dictum. Quisque id mauris vel leo egestas gravida vitae a ex.</p>
+          </TextBox>
         </div>
         <div className={styles.appTextContainer}>
-          <p class={styles.appJoke}>{ this.state.randomJoke }</p>
+          <p className={styles.appJoke}>{ this.state.randomJoke }</p>
         </div>
-        <div classname={styles.appListContainer}>
+        <div className={styles.appListContainer}>
           <ul className={styles.appList}>
             {this.showJokeCategories()}
           </ul>
