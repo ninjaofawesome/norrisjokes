@@ -36,33 +36,7 @@ $buttonProps: (
   colorHover: [SOMEVALUE],
 );
 */
-.main-page-container {
-  grid-column-start: 1;
-  grid-column-end: 11; }
-
-.main-title-container,
-.main-content-container {
-  grid-column-start: 3;
-  grid-column-end: 8; }
-
-.main-button-wrapper {
-  width: 150px;
-  display: block;
-  margin: 0 auto; }
-
-.joke-text {
-  font-weight: 700;
-  color: #141414;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
-
-@media (min-width: 1px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-  .main-title-container,
-  .main-content-container {
-    grid-column-start: 1;
-    grid-column-end: 11; } }
-
-@media (min-width: 1px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  .main-title-container,
-  .main-content-container {
-    grid-column-start: 1;
-    grid-column-end: 11; } }
+.text-box-wrapper {
+  height: auto;
+  display: inline-block;
+  width: 100%; }

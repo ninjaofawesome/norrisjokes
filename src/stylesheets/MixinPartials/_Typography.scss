@@ -1,5 +1,17 @@
 @import '../Variables.scss';
 
+// basic styles
+p {
+ text-align: justify;
+ justify-content: auto;
+
+ &:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+ } 
+}
+
 @mixin Type400($color: $black) {
   font-weight: 400;
   color: $color;

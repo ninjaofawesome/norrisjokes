@@ -13,7 +13,6 @@ html {
   @include GridSystem($desktopGrid);
 }
 
-
 @media #{$tablet} {
   .app-container {
     @include GridSystem($tabletGrid);
