@@ -27,6 +27,8 @@ $buttonProps: (
   vertical-align: middle;
   text-decoration: none;
   border-radius: $xsmall;
+  cursor: pointer;
+  text-align: center;
 
   &:active,
   &:focus,
@@ -55,6 +57,7 @@ $buttonProps: (
   text-decoration: none;
   border-radius: $xsmall;
   cursor: pointer;
+  text-align: center;
 
   &:active,
   &:focus,
@@ -81,6 +84,7 @@ $buttonProps: (
   text-decoration: none;
   border-radius: $xsmall;
   cursor: pointer;
+  text-align: center;
 
   &:active,
   &:focus,
@@ -107,6 +111,7 @@ $buttonProps: (
   text-decoration: none;
   border-radius: $xsmall;
   cursor: pointer;
+  text-align: center;
 
   &:active,
   &:focus,

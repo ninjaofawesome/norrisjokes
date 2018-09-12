@@ -35,7 +35,8 @@ $buttonProps: (
   vertical-align: middle;
   text-decoration: none;
   border-radius: 5px;
-  cursor: pointer; }
+  cursor: pointer;
+  text-align: center; }
   .black-button:active, .black-button:focus, .black-button:hover {
     -webkit-transition: all 350ms ease-out;
     -moz-transition: all 350ms ease-out;
@@ -60,7 +61,8 @@ $buttonProps: (
   vertical-align: middle;
   text-decoration: none;
   border-radius: 5px;
-  cursor: pointer; }
+  cursor: pointer;
+  text-align: center; }
   .gray-button:active, .gray-button:focus, .gray-button:hover {
     -webkit-transition: all 350ms ease-out;
     -moz-transition: all 350ms ease-out;
@@ -85,7 +87,8 @@ $buttonProps: (
   vertical-align: middle;
   text-decoration: none;
   border-radius: 5px;
-  cursor: pointer; }
+  cursor: pointer;
+  text-align: center; }
   .white-button:active, .white-button:focus, .white-button:hover {
     -webkit-transition: all 350ms ease-out;
     -moz-transition: all 350ms ease-out;
@@ -109,7 +112,9 @@ $buttonProps: (
   line-height: 50px;
   vertical-align: middle;
   text-decoration: none;
-  border-radius: 5px; }
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center; }
   .custom-button:active, .custom-button:focus, .custom-button:hover {
     -webkit-transition: all 350ms ease-out;
     -moz-transition: all 350ms ease-out;

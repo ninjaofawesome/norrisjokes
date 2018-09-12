@@ -1,0 +1,30 @@
+@import '../../stylesheets/Master.scss';
+
+.main-page-container {
+  @include Columns(1, 11);
+}
+
+.main-title-container,
+.main-content-container {
+  @include Columns(3, 8);
+}
+
+.main-button-wrapper {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media #{$mobile} {
+  .main-title-container,
+  .main-content-container {
+    @include Columns(1, 11);
+  }
+}
+
+@media #{$mobilePortrait} {
+  .main-title-container,
+  .main-content-container {
+    @include Columns(1, 11);
+  }
+}
