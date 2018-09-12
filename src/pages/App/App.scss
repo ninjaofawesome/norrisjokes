@@ -9,7 +9,7 @@ html {
   background-color: $white;
 }
 
-.app {
+.app-container {
   @include GridSystem($desktopGrid);
 }
 
