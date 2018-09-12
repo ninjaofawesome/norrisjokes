@@ -2,24 +2,69 @@
 
 body,
 html {
+  @include BodyType();
+
   font-family: $sans-serif;
   font-size: 16px;
-  color: $black;
   background-color: $white;
 }
 
 .app {
+  @include GridSystem($desktopGrid);
+}
+
+.app-title-container {
+  grid-column: 3/10;
   text-align: center;
 }
 
-.app-text {
-  font-weight: 700;
-  font-size: 1.25em;
+.app-text-container {
+  grid-column: 1/11;
 }
 
-.button-wrapper {
-  height: auto;
-  width: 200px;
-  display: block;
-  margin: 5px auto;
+.app-list-container{
+  grid-column: 1/2;
+}
+
+.app-joke {
+  text-align: center;
+}
+
+.app-list {
+  list-style-type: none;
+}
+
+@media #{$tablet} {
+  .app {
+    @include GridSystem($tabletGrid);
+  }
+}
+
+@media #{$tabletPortrait} {
+  .app {
+    @include GridSystem($tabletPortraitGrid);
+  }
+}
+
+@media #{$phablet} {
+  .app {
+    @include GridSystem($phabletGrid);
+  }
+}
+
+@media #{$mobile} {
+  .app {
+    @include GridSystem($mobileGrid);
+  }
+}
+
+@media #{$mobilePortrait} {
+  .app {
+    @include GridSystem($mobilePortraitGrid);
+  }
+
+  .app-title-container {
+    grid-column: 1/11;
+    text-align: center;
+  }
 }

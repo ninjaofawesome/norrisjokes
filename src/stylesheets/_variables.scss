@@ -6,3 +6,74 @@ $gray: #727272;
 
 // type
 $sans-serif:  Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+// measurements
+
+$xsmall: 5px;
+$small: 10px;
+$medium: 20px;
+$large: 40px;
+$xlarge: 80px;
+
+
+//  grid maps:
+$desktopGrid: (
+  cols: 10,
+  width: 100px,
+  colGap: $small,
+);
+
+$tabletGrid: (
+  cols: 10,
+  width: 90px,
+  colGap: $small,
+);
+
+$tabletPortraitGrid: (
+  cols: 10,
+  width: 60px,
+  colGap: $small,
+);
+
+$phabletGrid: (
+  cols: 10,
+  width: 55px,
+  colGap: $xsmall,
+);
+
+$mobileGrid: (
+  cols: 10,
+  width: 45px,
+  colGap: $xsmall,
+);
+
+$mobilePortraitGrid: (
+  cols: 10,
+  width: 25px,
+  colGap: $xsmall,
+);
+
+// Breakpoints
+
+$desktop: screen and (min-width: 1025px);
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+$tablet: 'screen and (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2)';
+
+$tabletPortrait: 'screen and (min-width: 768px) and (max-width: 1024px)  and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2)';
+
+$tabletLandscape: 'screen and (min-width: 768px) and (max-width: 1024px)  and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)';
+/* ------------- Phablet ------------------- */
+$phablet: '(min-width: 668px) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2)';
+
+$phabletPortrait: '(min-width: 668px) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)';
+
+$phabletLandscape: '(min-width: 668px) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)';
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+$mobile: '(min-width: 1px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2)';
+
+$mobilePortrait: '(min-width: 1px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)';
+
+$mobileLandscape: '(min-width: 1px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)';

@@ -14,7 +14,7 @@
   &::before {
     content: "";
     animation: spinner 1s linear infinite;
-    border: solid 10px $black;
+    border: solid $small $black;
     border-bottom-color: $gray;
     border-radius: 50%;
     height: 100px;

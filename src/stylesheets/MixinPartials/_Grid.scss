@@ -1,0 +1,7 @@
+@mixin GridSystem($grid) {
+  display: grid;
+  grid-template-columns: repeat(map-get($grid, cols), map-get($grid, width));
+  column-gap: map-get($grid, colGap);
+  justify-content: center;
+}
+

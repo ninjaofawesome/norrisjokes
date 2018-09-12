@@ -15,7 +15,6 @@ const buttonStyles = ({ color }) => {
 }
 
 const NavigationButton = props => {
-  console.log(props.copy)
   return (
     <Link
       to={`/${props.location}`}
