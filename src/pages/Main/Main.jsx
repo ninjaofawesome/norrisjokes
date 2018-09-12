@@ -1,20 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'found';
 
-const MainPage = props => (
+const MainPage = () => (
   <div>
-    {props.children}
+    I am a Main page
+    <Link to='/'>Home</Link>
+    <Link to='/categories'>Home</Link>
   </div>
 );
 
 export default MainPage;
-
-MainPage.propTypes = {
-  children: PropTypes.node,
-};
-
-MainPage.defaultProps = {
-  children: <div />
-};
-
-
