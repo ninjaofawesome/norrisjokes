@@ -36,3 +36,7 @@ $buttonProps: (
   colorHover: [SOMEVALUE],
 );
 */
+.text-box-wrapper {
+  height: auto;
+  display: inline-block;
+  width: 100%; }
