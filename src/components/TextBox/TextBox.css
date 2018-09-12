@@ -6,7 +6,11 @@
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 p {
   text-align: justify;
-  justify-content: inter-word; }
+  justify-content: auto; }
+  p:after {
+    content: "";
+    display: inline-block;
+    width: 100%; }
 
 /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
 /* ------------- Phablet ------------------- */
@@ -16,7 +20,11 @@ p {
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 p {
   text-align: justify;
-  justify-content: inter-word; }
+  justify-content: auto; }
+  p:after {
+    content: "";
+    display: inline-block;
+    width: 100%; }
 
 /* 
 $buttonProps: (

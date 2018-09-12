@@ -3,7 +3,13 @@
 // basic styles
 p {
  text-align: justify;
- justify-content: inter-word; 
+ justify-content: auto;
+
+ &:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+ } 
 }
 
 @mixin Type400($color: $black) {
