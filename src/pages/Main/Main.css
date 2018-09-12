@@ -34,6 +34,11 @@ $buttonProps: (
   display: block;
   margin: 0 auto; }
 
+.joke-text {
+  font-weight: 700;
+  color: #141414;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
 @media (min-width: 1px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
   .main-title-container,
   .main-content-container {

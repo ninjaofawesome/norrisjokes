@@ -15,6 +15,10 @@
   margin: 0 auto;
 }
 
+.joke-text {
+  @include Type700();
+}
+
 @media #{$mobile} {
   .main-title-container,
   .main-content-container {
