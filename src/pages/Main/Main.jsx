@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TextBox from '../../components/TextBox/TextBox';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
 import { handleResponse } from '../../utils/helperFunctions.js';
@@ -31,7 +32,6 @@ class MainPage extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className={styles.mainPageContainer}>
         <div className={styles.mainTitleContainer}>
@@ -49,8 +49,9 @@ class MainPage extends Component {
             size='1.5em'
             copy='Chuck Norris jokes for all occasions!'
           />
-          <p className={styles.jokeText}>{this.state.randomJoke}</p>
-          <p>This is the main page of the app.  Click to go somewhere</p>
+          <div className={styles.mainCopyContainer}>
+            <p className={styles.jokeText}>{this.state.randomJoke}</p>
+          </div>
           <div className={styles.mainButtonWrapper}>
             <Button
               type='navigation'

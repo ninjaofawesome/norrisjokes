@@ -1,12 +1,16 @@
 @import '../../stylesheets/Master.scss';
 
 .main-page-container {
-  @include Columns(1, 11);
+  @include GridSystem($desktopGrid);
 }
 
 .main-title-container,
 .main-content-container {
   @include Columns(3, 8);
+}
+
+.main-copy-container {
+  @include Columns(2, 9);
 }
 
 .main-button-wrapper {
@@ -19,7 +23,29 @@
   @include Type700();
 }
 
+@media #{$tablet} {
+  .main-page-container {
+    @include GridSystem($tabletGrid);
+  }
+}
+
+@media #{$tabletPortrait} {
+  .app-container {
+    @include GridSystem($tabletPortraitGrid);
+  }
+}
+
+@media #{$phablet} {
+  .main-page-container {
+    @include GridSystem($phabletGrid);
+  }
+}
+
 @media #{$mobile} {
+  .main-page-container {
+    @include GridSystem($mobileGrid);
+  }
+
   .main-title-container,
   .main-content-container {
     @include Columns(1, 11);
@@ -27,8 +53,14 @@
 }
 
 @media #{$mobilePortrait} {
-  .main-title-container,
-  .main-content-container {
-    @include Columns(1, 11);
+  .main-page-container {
+    @include GridSystem($mobilePortraitGrid);
   }
+
+
+}
+
+
+@media #{$mobilePortrait} {
+  
 }

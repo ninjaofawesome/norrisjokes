@@ -10,35 +10,7 @@ html {
 }
 
 .app-container {
-  @include GridSystem($desktopGrid);
+  display: block;
 }
 
-@media #{$tablet} {
-  .app-container {
-    @include GridSystem($tabletGrid);
-  }
-}
 
-@media #{$tabletPortrait} {
-  .app-container {
-    @include GridSystem($tabletPortraitGrid);
-  }
-}
-
-@media #{$phablet} {
-  .app-container {
-    @include GridSystem($phabletGrid);
-  }
-}
-
-@media #{$mobile} {
-  .app-container {
-    @include GridSystem($mobileGrid);
-  }
-}
-
-@media #{$mobilePortrait} {
-  .app-container {
-    @include GridSystem($mobilePortraitGrid);
-  }
-}
