@@ -89,7 +89,8 @@ $buttonProps: (
     column-gap: 5px;
     justify-content: center; }
   .main-title-container,
-  .main-content-container {
+  .main-content-container,
+  .main-copy-container {
     grid-column-start: 1;
     grid-column-end: 11; } }
 
@@ -98,4 +99,9 @@ $buttonProps: (
     display: grid;
     grid-template-columns: repeat(10, 25px);
     column-gap: 5px;
-    justify-content: center; } }
+    justify-content: center; }
+  .main-title-container,
+  .main-content-container,
+  .main-copy-container {
+    grid-column-start: 1;
+    grid-column-end: 11; } }

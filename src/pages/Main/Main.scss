@@ -47,7 +47,8 @@
   }
 
   .main-title-container,
-  .main-content-container {
+  .main-content-container,
+  .main-copy-container {
     @include Columns(1, 11);
   }
 }
@@ -57,10 +58,9 @@
     @include GridSystem($mobilePortraitGrid);
   }
 
-
-}
-
-
-@media #{$mobilePortrait} {
-  
+  .main-title-container,
+  .main-content-container,
+  .main-copy-container {
+    @include Columns(1, 11);
+  }
 }
