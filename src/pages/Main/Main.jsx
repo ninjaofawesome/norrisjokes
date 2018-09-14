@@ -59,6 +59,14 @@ class MainPage extends Component {
               color='black'
             />
           </div>
+          <div className={styles.mainButtonWrapper}>
+            <Button
+              type='navigation'
+              location='/random'
+              content='Random'
+              color='black'
+            />
+          </div>
         </div>
       </div>
     );

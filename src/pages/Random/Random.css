@@ -1,0 +1,38 @@
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+/* ------------- Phablet ------------------- */
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+/* ------------- Phablet ------------------- */
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+p {
+  text-align: justify;
+  justify-content: auto; }
+  p:after {
+    content: "";
+    display: inline-block;
+    width: 100%; }
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+/* ------------- Phablet ------------------- */
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+/* ------------- Phablet ------------------- */
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+p {
+  text-align: justify;
+  justify-content: auto; }
+  p:after {
+    content: "";
+    display: inline-block;
+    width: 100%; }
+
+/* 
+$buttonProps: (
+  backgroundColor: [SOMEVALUE],
+  border: [SOMEVALUE],
+  color: [SOMEVALUE],
+  backgroundHover: [SOMEVALUE],
+  borderHover: [SOMEVALUE],
+  colorHover: [SOMEVALUE],
+);
+*/

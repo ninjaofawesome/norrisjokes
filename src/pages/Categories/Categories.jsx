@@ -5,6 +5,7 @@ const CategoriesPage = () => (
   <div>
     I am a categories page
     <Link to='/'>Home</Link>
+    <Link to='/random'>Random</Link>
   </div>
 );
 
