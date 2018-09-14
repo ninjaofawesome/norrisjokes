@@ -5,3 +5,8 @@
   justify-content: center;
 }
 
+@mixin Columns($start, $end) {
+  grid-column-start: $start;
+  grid-column-end: $end; 
+}
+

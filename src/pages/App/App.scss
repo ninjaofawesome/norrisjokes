@@ -9,61 +9,8 @@ html {
   background-color: $white;
 }
 
-.app {
-  @include GridSystem($desktopGrid);
+.app-container {
+  display: block;
 }
 
-.app-title-container {
-  grid-column: 3/10;
-  text-align: center;
-}
-.app-text-container {
-  grid-column: 5/8;
-}
 
-.app-list-container{
-  grid-column: 1/2;
-}
-
-.app-joke {
-  text-align: center;
-}
-
-.app-list {
-  list-style-type: none;
-}
-
-@media #{$tablet} {
-  .app {
-    @include GridSystem($tabletGrid);
-  }
-}
-
-@media #{$tabletPortrait} {
-  .app {
-    @include GridSystem($tabletPortraitGrid);
-  }
-}
-
-@media #{$phablet} {
-  .app {
-    @include GridSystem($phabletGrid);
-  }
-}
-
-@media #{$mobile} {
-  .app {
-    @include GridSystem($mobileGrid);
-  }
-}
-
-@media #{$mobilePortrait} {
-  .app {
-    @include GridSystem($mobilePortraitGrid);
-  }
-
-  .app-title-container {
-    grid-column: 1/11;
-    text-align: center;
-  }
-}

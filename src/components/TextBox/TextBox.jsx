@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './TextBox.css';
 
 const TextBox = props => (
-  <div classNames={styles.textBoxWrapper}>
+  <div className={styles.textBoxWrapper}>
     {props.children}
   </div>
 );

@@ -17,7 +17,7 @@ const buttonStyles = ({ color }) => {
 const NavigationButton = props => {
   return (
     <Link
-      to={`/${props.location}`}
+      to={`${props.location}`}
       className={ buttonStyles(props) }
     >
       { props.content }
