@@ -1,1 +1,66 @@
 @import '../../stylesheets/Master.scss';
+
+.random-page-container {
+  @include GridSystem($desktopGrid);
+}
+
+.random-title-container,
+.random-content-container {
+  @include Columns(3, 8);
+}
+
+.random-copy-container {
+  @include Columns(2, 9);
+}
+
+.random-button-wrapper {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+.joke-text {
+  @include Type700();
+}
+
+@media #{$tablet} {
+  .random-page-container {
+    @include GridSystem($tabletGrid);
+  }
+}
+
+@media #{$tabletPortrait} {
+  .app-container {
+    @include GridSystem($tabletPortraitGrid);
+  }
+}
+
+@media #{$phablet} {
+  .random-page-container {
+    @include GridSystem($phabletGrid);
+  }
+}
+
+@media #{$mobile} {
+  .random-page-container {
+    @include GridSystem($mobileGrid);
+  }
+
+  .random-title-container,
+  .random-content-container,
+  .random-copy-container {
+    @include Columns(1, 11);
+  }
+}
+
+@media #{$mobilePortrait} {
+  .random-page-container {
+    @include GridSystem($mobilePortraitGrid);
+  }
+
+  .random-title-container,
+  .random-content-container,
+  .random-copy-container {
+    @include Columns(1, 11);
+  }
+}

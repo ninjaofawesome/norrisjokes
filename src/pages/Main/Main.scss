@@ -10,13 +10,14 @@
 }
 
 .main-copy-container {
-  @include Columns(2, 9);
+  width: 25%;
+  margin: 0 auto;
 }
 
 .main-button-wrapper {
-  width: 150px;
+  width: 310px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto $small;
 }
 
 .joke-text {

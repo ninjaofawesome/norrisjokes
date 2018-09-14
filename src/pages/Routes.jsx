@@ -17,7 +17,7 @@ const routeConfig = [
       },
       {
         path: 'random',
-        component: Random,
+        Component: Random,
       }
     ],
   },
