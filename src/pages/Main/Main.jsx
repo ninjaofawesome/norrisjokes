@@ -29,7 +29,7 @@ const MainPage = () => {
         <div className={styles.mainButtonWrapper}>
           <Button
             type='navigation'
-            location='/categories'
+            location='/random'
             content='Sure. Surprise me.'
             color='black'
           />
@@ -37,7 +37,7 @@ const MainPage = () => {
         <div className={styles.mainButtonWrapper}>
           <Button
             type='navigation'
-            location='/random'
+            location='/categories'
             content='Yes, but I call the shots.'
             color='white'
           />

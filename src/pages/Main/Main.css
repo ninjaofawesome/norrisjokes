@@ -45,14 +45,14 @@ $buttonProps: (
 .main-title-container,
 .main-content-container {
   grid-column-start: 3;
-  grid-column-end: 8; }
+  grid-column-end: 9; }
 
 .main-copy-container {
   width: 25%;
   margin: 0 auto; }
 
 .main-button-wrapper {
-  width: 310px;
+  width: 290px;
   display: block;
   margin: 0 auto 10px; }
 
@@ -66,14 +66,24 @@ $buttonProps: (
     display: grid;
     grid-template-columns: repeat(10, 90px);
     column-gap: 10px;
-    justify-content: center; } }
+    justify-content: center; }
+  .main-copy-container {
+    width: 35%;
+    margin: 0 auto; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
   .app-container {
     display: grid;
     grid-template-columns: repeat(10, 60px);
     column-gap: 10px;
-    justify-content: center; } }
+    justify-content: center; }
+  .main-title-container,
+  .main-content-container {
+    grid-column-start: 1;
+    grid-column-end: 11; }
+  .main-copy-container {
+    width: 15%;
+    margin: 0 auto; } }
 
 @media (min-width: 668px) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
   .main-page-container {
@@ -88,9 +98,11 @@ $buttonProps: (
     grid-template-columns: repeat(10, 45px);
     column-gap: 5px;
     justify-content: center; }
-  .main-title-container,
-  .main-content-container,
   .main-copy-container {
+    width: 35%;
+    margin: 0 auto; }
+  .main-title-container,
+  .main-content-container {
     grid-column-start: 1;
     grid-column-end: 11; } }
 
@@ -100,8 +112,10 @@ $buttonProps: (
     grid-template-columns: repeat(10, 25px);
     column-gap: 5px;
     justify-content: center; }
-  .main-title-container,
-  .main-content-container,
   .main-copy-container {
+    width: 50%;
+    margin: 0 auto; }
+  .main-title-container,
+  .main-content-container {
     grid-column-start: 1;
     grid-column-end: 11; } }

@@ -45,21 +45,25 @@ $buttonProps: (
 .random-title-container,
 .random-content-container {
   grid-column-start: 3;
-  grid-column-end: 8; }
+  grid-column-end: 9; }
 
 .random-copy-container {
   grid-column-start: 2;
   grid-column-end: 9; }
 
 .random-button-wrapper {
-  width: 150px;
+  width: 290px;
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto 10px; }
 
 .joke-text {
   font-weight: 700;
   color: #141414;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
+.joke-prompt {
+  width: 25%;
+  margin: 0 auto; }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   .random-page-container {
@@ -104,4 +108,7 @@ $buttonProps: (
   .random-content-container,
   .random-copy-container {
     grid-column-start: 1;
-    grid-column-end: 11; } }
+    grid-column-end: 11; }
+  .joke-prompt {
+    width: 50%;
+    margin: 0 auto; } }

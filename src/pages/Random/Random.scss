@@ -6,7 +6,7 @@
 
 .random-title-container,
 .random-content-container {
-  @include Columns(3, 8);
+  @include Columns(3, 9);
 }
 
 .random-copy-container {
@@ -14,13 +14,18 @@
 }
 
 .random-button-wrapper {
-  width: 150px;
+  width: 290px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto $small;
 }
 
 .joke-text {
   @include Type700();
+}
+
+.joke-prompt {
+  width: 25%;
+  margin: 0 auto;
 }
 
 @media #{$tablet} {
@@ -62,5 +67,10 @@
   .random-content-container,
   .random-copy-container {
     @include Columns(1, 11);
+  }
+
+  .joke-prompt {
+    width: 50%;
+    margin: 0 auto;
   }
 }

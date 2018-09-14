@@ -41,24 +41,22 @@ class RandomPage extends Component {
           />
         </div>
         <div className={styles.randomContentContainer}>
-          <div className={styles.randomCopyContainer}>
-            <p>Okay here goes.</p>
-            <p className={styles.jokeText}>{this.state.randomJoke}</p>
-          </div>
+          <p className={styles.jokePrompt}>Okay here goes.</p>
+          <p className={styles.jokeText}>{this.state.randomJoke}</p>
           <div className={styles.randomButtonWrapper}>
             <Button
               type='navigation'
-              location='/categories'
-              content='Categories'
+              location='/'
+              content='No more, please.'
               color='black'
             />
           </div>
           <div className={styles.randomButtonWrapper}>
             <Button
               type='navigation'
-              location='/'
-              content='Home'
-              color='black'
+              location='/categories'
+              content='Terrible.  Can I pick?'
+              color='white'
             />
           </div>
         </div>

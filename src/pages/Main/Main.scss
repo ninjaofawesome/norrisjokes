@@ -6,7 +6,7 @@
 
 .main-title-container,
 .main-content-container {
-  @include Columns(3, 8);
+  @include Columns(3, 9);
 }
 
 .main-copy-container {
@@ -15,7 +15,7 @@
 }
 
 .main-button-wrapper {
-  width: 310px;
+  width: 290px;
   display: block;
   margin: 0 auto $small;
 }
@@ -28,11 +28,26 @@
   .main-page-container {
     @include GridSystem($tabletGrid);
   }
+
+  .main-copy-container {
+    width: 35%;
+    margin: 0 auto;
+  }
 }
 
 @media #{$tabletPortrait} {
   .app-container {
     @include GridSystem($tabletPortraitGrid);
+  }
+
+  .main-title-container,
+  .main-content-container {
+    @include Columns(1, 11);
+  }
+
+  .main-copy-container {
+    width: 15%;
+    margin: 0 auto;
   }
 }
 
@@ -47,9 +62,13 @@
     @include GridSystem($mobileGrid);
   }
 
-  .main-title-container,
-  .main-content-container,
   .main-copy-container {
+    width: 35%;
+    margin: 0 auto;
+  }
+
+  .main-title-container,
+  .main-content-container {
     @include Columns(1, 11);
   }
 }
@@ -59,9 +78,13 @@
     @include GridSystem($mobilePortraitGrid);
   }
 
-  .main-title-container,
-  .main-content-container,
   .main-copy-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .main-title-container,
+  .main-content-container {
     @include Columns(1, 11);
   }
 }
