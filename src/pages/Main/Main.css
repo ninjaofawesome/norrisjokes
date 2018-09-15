@@ -69,7 +69,7 @@ $buttonProps: (
     justify-content: center; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  .app-container {
+  .main-page-container {
     display: grid;
     grid-template-columns: repeat(10, 60px);
     column-gap: 10px;

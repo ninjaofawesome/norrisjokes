@@ -30,7 +30,7 @@
 }
 
 @media #{$tabletPortrait} {
-  .app-container {
+  .main-page-container {
     @include GridSystem($tabletPortraitGrid);
   }
 }

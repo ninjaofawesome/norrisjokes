@@ -1,0 +1,56 @@
+@import '../../stylesheets/Master.scss';
+
+.categories-page-container {
+  @include GridSystem($desktopGrid);
+}
+
+.categories-title-container,
+.categories-content-container {
+  @include Columns(2, 10);
+}
+
+.categories-list-container,
+.categories-button-wrapper {
+  width: 125px;
+  margin: 0 auto;
+}
+
+@media #{$tablet} {
+  .categories-page-container {
+    @include GridSystem($tabletGrid);
+  }
+}
+
+@media #{$tabletPortrait} {
+  .categories-page-container {
+    @include GridSystem($tabletPortraitGrid);
+  }
+}
+
+@media #{$phablet} {
+  .categories-page-container {
+    @include GridSystem($phabletGrid);
+  }
+}
+
+@media #{$mobile} {
+  .categories-page-container {
+    @include GridSystem($mobileGrid);
+  }
+
+  .categories-title-container
+  .categories-content-container {
+    @include Columns(1, 11);
+  }
+}
+
+@media #{$mobilePortrait} {
+  .categories-page-container {
+    @include GridSystem($mobilePortraitGrid);
+  }
+
+  .categories-title-container
+  .categories-content-container {
+    @include Columns(1, 11);
+  }
+}
