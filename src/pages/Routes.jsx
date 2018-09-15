@@ -1,6 +1,7 @@
 import App from './App/App.jsx';
 import Main from './Main/Main.jsx';
 import Categories from './Categories/Categories.jsx';
+import Random from './Random/Random.jsx';
 
 const routeConfig = [
   {
@@ -14,6 +15,10 @@ const routeConfig = [
         path: 'categories',
         Component: Categories,
       },
+      {
+        path: 'random',
+        Component: Random,
+      }
     ],
   },
 ];
