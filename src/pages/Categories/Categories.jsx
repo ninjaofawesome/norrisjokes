@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import Modal from 'react-modal';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
 import { handleResponse } from '../../utils/helperFunctions.js';
+import { customStyles } from '../../utils/modalHelper.js';
 
 import styles from './Categories.css';
+
+Modal.setAppElement('#root');
 
 class CategoriesPage extends Component {
 
@@ -12,10 +16,14 @@ class CategoriesPage extends Component {
 
     this.state ={
       categories: [],
-    };
+      open: false,
+    },
 
     this.getJokeCategories = this.getJokeCategories.bind(this);
     this.showJokeCategories = this.showJokeCategories.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.modalComponent = this.modalComponent.bind(this);
   }
 
   getJokeCategories() {
@@ -31,6 +39,14 @@ class CategoriesPage extends Component {
     this.getJokeCategories();
   }
 
+  openModal(){
+    this.setState({ open: true });
+  }
+
+  closeModal(){
+    this.setState({ open: false });
+  }
+
   showJokeCategories() {
     const {
       categories,
@@ -41,6 +57,19 @@ class CategoriesPage extends Component {
         <li key={`category-${index}`}>{item}</li>
       ))
     }
+  }
+
+  modalComponent() {
+    <Modal
+       isOpen={this.state.modalIsOpen}
+       onRequestClose={this.closeModal}
+       style={customStyles}
+       contentLabel="Example Modal"
+    >
+      <p>Hello World</p>
+      <div>I am a modal</div>
+      <button onClick={this.closeModal}>close</button>
+    </Modal>
   }
 
   render() {
@@ -67,6 +96,7 @@ class CategoriesPage extends Component {
               location='/'
               content='Home'
               color='black'
+              onClick={this.openModal}
             />
           </div>
         </div>
