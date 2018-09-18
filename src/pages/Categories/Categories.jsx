@@ -44,6 +44,10 @@ class CategoriesPage extends Component {
     this.setState({modalIsOpen: false});
   }
 
+  placeholder(){
+    console.log('sup dawg');
+  }
+
   showJokeCategories() {
     const {
       categories,
@@ -51,7 +55,14 @@ class CategoriesPage extends Component {
 
     if (categories.length > 0) {
       return categories.map((item, index) => (
-        <li key={`category-${index}`}>{item}</li>
+        <li key={`category-${index}`}>
+          <Button
+            type='action'
+            content={item}
+            color='white'
+            action={this.placeholder()}
+          />
+        </li>
       ))
     }
   }
