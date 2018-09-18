@@ -11,3 +11,7 @@ const BrowserRouter = createBrowserRouter({ routeConfig });
 ReactDOM.render(<BrowserRouter />, document.getElementById('root'));
 registerServiceWorker();
 
+Modal.setAppElement('#root');
+
+
+
