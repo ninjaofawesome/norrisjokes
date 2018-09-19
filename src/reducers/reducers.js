@@ -1,22 +1,37 @@
 import { combineReducers } from 'redux';
-import { SIMPLE_ACTION } from '../actions/actions'
+import { GET_RANDOM_CATEGORIES } from '../actions/actions'
 
-const initialState = {
-  category: 'test',
+const initialCategoryState = {
+  category: '',
 };
 
-export const test = (state = initialState, action) => {
+const initialJokeState = {
+  randomJoke: '',
+};
+
+
+export const categories = (state = initialCategoryState, action) => {
  switch (action.type) {
-  case 'SIMPLE_ACTION':
-    console.log('action', action)
+  case 'GET_RANDOM_CATEGORIES':
    return Object.assign({}, state, 'category': action.category);
   default:
    return state;
  }
-}
+};
+
+export const jokes = (state = initialJokeState, action) => {
+ switch (action.type) {
+  case 'GET_RANDOM_JOKE':
+   return Object.assign({}, state, 'randomJoke': action.joke);
+  default:
+   return state;
+ }
+};
+
 
 const jokeReducer = combineReducers({
-  test,
+  categories,
+  jokes,
 })
 
 export default jokeReducer;

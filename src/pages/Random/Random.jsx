@@ -1,32 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+import { fetchJokes } from '../../actions/actions';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
-import { handleResponse } from '../../utils/helperFunctions.js';
+
 
 import styles from './Random.css';
 
 class RandomPage extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      randomJoke: '',
-    };
-
-    this.randomJokeRequest = this.randomJokeRequest.bind(this);
-  }
-
-  randomJokeRequest() {
-    fetch('https://api.chucknorris.io/jokes/random')
-    .then(handleResponse)
-    .then(data => {
-      this.setState({ randomJoke: data.value });  
-    })
-    .catch(error => console.log('something went wrong!', error));
-  }
-
-  componentDidMount() {
-    this.randomJokeRequest();
+  componentDidMount(){
+    this.props.fetchJokes();
   }
 
   render() {
@@ -42,7 +26,7 @@ class RandomPage extends Component {
         </div>
         <div className={styles.randomContentContainer}>
           <p className={styles.jokePrompt}>Okay here goes.</p>
-          <p className={styles.jokeText}>{this.state.randomJoke}</p>
+          <p className={styles.jokeText}>hello</p>
           <div className={styles.randomButtonWrapper}>
             <Button
               type='navigation'
@@ -65,4 +49,17 @@ class RandomPage extends Component {
   }
 }
 
-export default RandomPage;
+const mapStateToProps = state => {
+  console.log('state', state)
+  return {
+    randomJoke: state,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({
+    fetchJokes,
+  }, dispatch)
+}
+
+export default connect(mapStateToProps)(RandomPage);
