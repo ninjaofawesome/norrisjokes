@@ -17,7 +17,7 @@ import {
 import { Provider } from 'react-redux';
 import { combineReducers, compose, createStore } from 'redux';
 import routeConfig from './pages/Routes.jsx';
-import  allReducers from './reducers/reducers.js';
+import allReducers from './reducers/reducers.js';
 import Modal from 'react-modal';
 import registerServiceWorker from './registerServiceWorker';
 /* ... */
@@ -35,7 +35,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   combineReducers({
     found: foundReducer,
-    allReducers,
+    all: allReducers,
   }),
   composeEnhancers(
     createHistoryEnhancer({
@@ -43,7 +43,7 @@ const store = createStore(
       middlewares: [queryMiddleware],
     }),
     createMatchEnhancer(
-      new Matcher(routeConfig, { matchStemRoutes: false }),
+      new Matcher(routeConfig),
     ),
   ),
 );
