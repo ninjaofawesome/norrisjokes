@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux'
-import { fetchJokes } from '../../actions/actions';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
 
@@ -9,9 +7,6 @@ import Button from '../../components/Button/Button';
 import styles from './Random.css';
 
 class RandomPage extends Component {
-  componentDidMount(){
-    this.props.fetchJokes();
-  }
 
   render() {
     return(
@@ -54,12 +49,6 @@ const mapStateToProps = state => {
   return {
     randomJoke: state,
   }
-}
-
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({
-    fetchJokes,
-  }, dispatch)
-}
+};
 
 export default connect(mapStateToProps)(RandomPage);
