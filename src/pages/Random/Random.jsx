@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
+import { fetchJokes } from '../../actions/actions';
 
 
 import styles from './Random.css';
 
 class RandomPage extends Component {
+
+  componentDidMount() {
+    fetchJokes();
+  }
 
   render() {
     return(
@@ -21,7 +27,7 @@ class RandomPage extends Component {
         </div>
         <div className={styles.randomContentContainer}>
           <p className={styles.jokePrompt}>Okay here goes.</p>
-          <p className={styles.jokeText}>hello</p>
+          <p className={styles.jokeText}>{this.props.randomJoke}</p>
           <div className={styles.randomButtonWrapper}>
             <Button
               type='navigation'
@@ -45,10 +51,15 @@ class RandomPage extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('state', state)
   return {
-    randomJoke: state,
+    randomJoke: state.reducers.jokes.randomJoke,
   }
 };
 
-export default connect(mapStateToProps)(RandomPage);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({
+    fetchJokes,
+  }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RandomPage);
