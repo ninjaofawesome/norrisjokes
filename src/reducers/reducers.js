@@ -2,6 +2,7 @@ import {
   GET_RANDOM_CATEGORIES,
   GET_RANDOM_JOKE,  
 } from '../actions/actions';
+import { combineReducers } from 'redux';
 
 const initialCategoryState = {
   category: '',
@@ -31,9 +32,9 @@ export const jokesReducer = (state = initialJokeState, action) => {
 };
 
 
-const allReducers = {
+const reducers = combineReducers({
   categories: categoriesReducer,
   jokes: jokesReducer,
-};
+});
 
-export default allReducers;
+export default reducers;

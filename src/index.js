@@ -17,7 +17,7 @@ import {
 import { Provider } from 'react-redux';
 import { combineReducers, compose, createStore } from 'redux';
 import routeConfig from './pages/Routes.jsx';
-import allReducers from './reducers/reducers.js';
+import reducers from './reducers/reducers.js';
 import Modal from 'react-modal';
 import registerServiceWorker from './registerServiceWorker';
 /* ... */
@@ -32,11 +32,13 @@ if (process.env.NODE_ENV === 'development') {
 }
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+const allReducers = {
+  found: foundReducer,
+  reducers,
+}
+
 const store = createStore(
-  combineReducers({
-    found: foundReducer,
-    all: allReducers,
-  }),
+  combineReducers(allReducers),
   composeEnhancers(
     createHistoryEnhancer({
       protocol: new BrowserProtocol(),
