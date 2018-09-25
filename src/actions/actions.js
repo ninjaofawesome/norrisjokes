@@ -19,7 +19,7 @@ export const fetchJokes = () => {
     fetch(url)
     .then(handleResponse)
     .then(data => {
-      return (dispatch => populateJokes(data));   
+      return dispatch => populateJokes(data);   
     })
     .catch(error => console.log('something went wrong!', error))
   );  

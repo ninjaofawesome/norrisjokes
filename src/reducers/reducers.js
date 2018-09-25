@@ -25,6 +25,7 @@ export const categoriesReducer = (state = initialCategoryState, action) => {
 export const jokesReducer = (state = initialJokeState, action) => {
  switch (action.type) {
   case 'GET_RANDOM_JOKE':
+  console.log(state)
    return Object.assign({}, state, 'randomJoke': action.joke);
   default:
    return state;

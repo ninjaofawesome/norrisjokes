@@ -19,6 +19,8 @@ import { combineReducers, compose, createStore } from 'redux';
 import routeConfig from './pages/Routes.jsx';
 import reducers from './reducers/reducers.js';
 import Modal from 'react-modal';
+import thunk from 'redux-thunk';
+import { handleResponse } from './utils/helperFunctions.js';
 import registerServiceWorker from './registerServiceWorker';
 /* ... */
 const enhancers = [];
@@ -35,7 +37,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const allReducers = {
   found: foundReducer,
   reducers,
-}
+};
 
 const store = createStore(
   combineReducers(allReducers),
