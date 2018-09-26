@@ -15,7 +15,7 @@ import {
   resolver,
 } from 'found';
 import { Provider } from 'react-redux';
-import { combineReducers, compose, createStore } from 'redux';
+import { combineReducers, compose, createStore, applyMiddleware } from 'redux';
 import routeConfig from './pages/Routes.jsx';
 import reducers from './reducers/reducers.js';
 import Modal from 'react-modal';
@@ -49,6 +49,7 @@ const store = createStore(
     createMatchEnhancer(
       new Matcher(routeConfig),
     ),
+    applyMiddleware(thunk),
   ),
 );
 

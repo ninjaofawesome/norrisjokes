@@ -92,7 +92,6 @@ class CategoriesPage extends Component {
   }
 
   render() {
-    console.log(this.state.modalIsOpen)
     return (
       <div className={styles.categoriesPageContainer}>
         {this.helloModal()}
