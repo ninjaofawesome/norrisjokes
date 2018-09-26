@@ -10,10 +10,19 @@ import styles from './Random.css';
 
 class RandomPage extends Component {
 
-  componentDidMount() {
-    fetchJokes();
+  constructor(props) {
+    super(props);
+
+    this.getJokes = this.getJokes.bind(this);
   }
 
+  componentDidMount() {
+    this.getJokes();
+  }
+
+  getJokes() {
+    window.addEventListener('load', this.props.fetchJokes());
+  }
   render() {
     console.log(this.props);
     return(
