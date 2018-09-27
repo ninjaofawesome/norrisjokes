@@ -22,10 +22,12 @@ class CategoriesPage extends Component {
       modalIsOpen: false,
     };
 
-    this.getJokeCategories = this.getJokeCategories.bind(this);
-    this.populateCategories = this.populateCategories.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+  }
+
+  componentDidMount() {
+    this.getJokeCategories();
   }
 
   getJokeCategories() {
@@ -37,10 +39,7 @@ class CategoriesPage extends Component {
     .catch(error => console.log(error));
   }
 
-  componentDidMount() {
-    this.getJokeCategories();
-  }
-
+  
   openModal() {
     this.setState({modalIsOpen: true});
   }
@@ -58,8 +57,6 @@ class CategoriesPage extends Component {
       categories,
     } = this.props;
 
-    console.log(this.props)
-
     if (categories.length > 0) {
       return categories.map((item, index) => (
         <li 
@@ -70,7 +67,7 @@ class CategoriesPage extends Component {
             className={styles.categoriesMenuItem}
             role='button'
             tabIndex={0}
-            onClick={() => this.props.chooseCategory(item)}
+            onClick={() => this.props.dispatch(chooseCategory(item))}
           >
             {item}
           </div>
@@ -137,10 +134,4 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({
-    chooseCategory
-  }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CategoriesPage);
+export default connect(mapStateToProps)(CategoriesPage);
