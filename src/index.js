@@ -20,7 +20,6 @@ import routeConfig from './pages/Routes.jsx';
 import reducers from './reducers/reducers.js';
 import Modal from 'react-modal';
 import thunk from 'redux-thunk';
-import { handleResponse } from './utils/helperFunctions.js';
 import registerServiceWorker from './registerServiceWorker';
 /* ... */
 const enhancers = [];

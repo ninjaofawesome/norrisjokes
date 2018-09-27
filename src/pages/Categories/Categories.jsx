@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import Modal from 'react-modal';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
@@ -46,10 +45,6 @@ class CategoriesPage extends Component {
 
   closeModal() {
     this.setState({modalIsOpen: false});
-  }
-
-  placeholder(){
-    console.log('sup dawg');
   }
 
   populateCategories() {
