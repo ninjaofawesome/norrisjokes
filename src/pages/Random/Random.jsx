@@ -3,7 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
-import { fetchJokes } from '../../actions/actions';
+import { handleResponse } from '../../utils/helperFunctions.js'
+import { populateJokes } from '../../actions/actions';
 
 
 import styles from './Random.css';
@@ -21,10 +22,18 @@ class RandomPage extends Component {
   }
 
   getJokes() {
-    window.addEventListener('load', this.props.fetchJokes());
+    const url = 'https://api.chucknorris.io/jokes/random';
+    return(
+      fetch(url)
+      .then(handleResponse)
+      .then(data => {
+        this.props.dispatch(populateJokes(data.value));   
+      })
+      .catch(error => console.log('something went wrong!', error))
+    );  
   }
+
   render() {
-    console.log(this.props);
     return(
       <div className={styles.randomPageContainer}>
         <div className={styles.randomTitleContainer}>
@@ -66,10 +75,4 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({
-    fetchJokes,
-  }, dispatch);
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(RandomPage);
+export default connect(mapStateToProps)(RandomPage);

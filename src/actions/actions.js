@@ -11,7 +11,7 @@ export const populateCategories = data => ({
 export const populateJokes = data => ({
   type: GET_RANDOM_JOKE,
   joke: data,
-})
+});
 
 export const fetchJokes = () => {
   const url = 'https://api.chucknorris.io/jokes/random';
