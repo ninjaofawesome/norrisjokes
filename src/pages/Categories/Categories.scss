@@ -11,8 +11,30 @@
 
 .categories-list-container,
 .categories-button-wrapper {
-  width: 125px;
+  width: 150px;
   margin: 0 auto;
+}
+
+.categories-list {
+  padding-left: 0;
+}
+
+.categories-list-item {
+  list-style-type: none;
+  text-align: center;
+  padding-bottom: $xsmall
+}
+
+.categories-menu-item {
+  @include Type700();
+  font-size: 1.5em;
+  cursor: pointer;
+
+  &:active,
+  &:focus,
+  &:hover {
+    @include Type700($gray);
+  }
 }
 
 @media #{$tablet} {

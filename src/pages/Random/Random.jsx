@@ -1,32 +1,35 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
-import { handleResponse } from '../../utils/helperFunctions.js';
+import { handleResponse } from '../../utils/helperFunctions.js'
+import { populateJokes } from '../../actions/actions';
+
 
 import styles from './Random.css';
 
 class RandomPage extends Component {
-  constructor() {
-    super();
 
-    this.state = {
-      randomJoke: '',
-    };
+  constructor(props) {
+    super(props);
 
-    this.randomJokeRequest = this.randomJokeRequest.bind(this);
-  }
-
-  randomJokeRequest() {
-    fetch('https://api.chucknorris.io/jokes/random')
-    .then(handleResponse)
-    .then(data => {
-      this.setState({ randomJoke: data.value });  
-    })
-    .catch(error => console.log('something went wrong!', error));
+    this.getJokes = this.getJokes.bind(this);
   }
 
   componentDidMount() {
-    this.randomJokeRequest();
+    this.getJokes();
+  }
+
+  getJokes() {
+    const url = 'https://api.chucknorris.io/jokes/random';
+    return(
+      fetch(url)
+      .then(handleResponse)
+      .then(data => {
+        this.props.dispatch(populateJokes(data.value));   
+      })
+      .catch(error => console.log('something went wrong!', error))
+    );  
   }
 
   render() {
@@ -42,7 +45,7 @@ class RandomPage extends Component {
         </div>
         <div className={styles.randomContentContainer}>
           <p className={styles.jokePrompt}>Okay here goes.</p>
-          <p className={styles.jokeText}>{this.state.randomJoke}</p>
+          <p className={styles.jokeText}>{this.props.randomJoke}</p>
           <div className={styles.randomButtonWrapper}>
             <Button
               type='navigation'
@@ -65,4 +68,10 @@ class RandomPage extends Component {
   }
 }
 
-export default RandomPage;
+const mapStateToProps = state => {
+  return {
+    randomJoke: state.reducers.jokes.randomJoke,
+  }
+};
+
+export default connect(mapStateToProps)(RandomPage);
