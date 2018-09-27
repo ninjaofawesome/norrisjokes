@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Modal from 'react-modal';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
 import { handleResponse } from '../../utils/helperFunctions.js';
-import { populateCategories } from '../../actions/actions';
+import { 
+  populateCategories,
+  chooseCategory, 
+} from '../../actions/actions';
 import { customStyles } from '../../utils/modalHelper.js';
 
 import styles from './Categories.css';
@@ -54,24 +58,28 @@ class CategoriesPage extends Component {
       categories,
     } = this.props;
 
+    console.log(this.props)
+
     if (categories.length > 0) {
       return categories.map((item, index) => (
         <li 
           key={`category-${index}`} 
           className={styles.categoriesListItem}
         >
-          <Button
-            type='action'
-            content={item}
-            color='white'
-            action={this.placeholder()}
-          />
+          <div 
+            className={styles.categoriesMenuItem}
+            role='button'
+            tabIndex={0}
+            onClick={() => this.props.chooseCategory(item)}
+          >
+            {item}
+          </div>
         </li>
       ))
     }
   }
 
-  helloModal() {
+  modalComponent() {
     return(
       <div>
         <Modal
@@ -98,7 +106,7 @@ class CategoriesPage extends Component {
   render() {
     return (
       <div className={styles.categoriesPageContainer}>
-        {this.helloModal()}
+        {this.modalComponent()}
         <div className={styles.categoriesTitleContainer}>
           <Title
             header={1}
@@ -125,8 +133,14 @@ class CategoriesPage extends Component {
 
 const mapStateToProps = state => {
   return {
-    categories: state.reducers.categories.category,
+    categories: state.reducers.categories.categoryList,
   }
 }
 
-export default connect(mapStateToProps)(CategoriesPage);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({
+    chooseCategory
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CategoriesPage);
