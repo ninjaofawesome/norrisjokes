@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
 import { handleResponse } from '../../utils/helperFunctions.js';
+import { populateCategories } from '../../actions/actions';
 import { customStyles } from '../../utils/modalHelper.js';
 
 import styles from './Categories.css';
@@ -13,12 +15,11 @@ class CategoriesPage extends Component {
     super();
 
     this.state = {
-      categories: [],
       modalIsOpen: false,
     };
 
     this.getJokeCategories = this.getJokeCategories.bind(this);
-    this.showJokeCategories = this.showJokeCategories.bind(this);
+    this.populateCategories = this.populateCategories.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
@@ -27,7 +28,7 @@ class CategoriesPage extends Component {
     fetch('https://api.chucknorris.io/jokes/categories')
     .then(handleResponse)
     .then(data => {
-      this.setState({ categories: data })
+       this.props.dispatch(populateCategories(data))
     })
     .catch(error => console.log(error));
   }
@@ -48,10 +49,10 @@ class CategoriesPage extends Component {
     console.log('sup dawg');
   }
 
-  showJokeCategories() {
+  populateCategories() {
     const {
       categories,
-    } = this.state;
+    } = this.props;
 
     if (categories.length > 0) {
       return categories.map((item, index) => (
@@ -81,11 +82,11 @@ class CategoriesPage extends Component {
           contentLabel="Example Modal"
         >
           <ul className={styles.categoriesList}>
-            {this.showJokeCategories()}
+            {this.populateCategories()}
           </ul>
           <Button
             type='action'
-            content='Okay'
+            content='I decline.'
             color='black'
             action={this.closeModal}
           />
@@ -122,4 +123,10 @@ class CategoriesPage extends Component {
   }
 }
 
-export default CategoriesPage;
+const mapStateToProps = state => {
+  return {
+    categories: state.reducers.categories.category,
+  }
+}
+
+export default connect(mapStateToProps)(CategoriesPage);
