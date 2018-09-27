@@ -46,7 +46,7 @@ class RandomPage extends Component {
         </div>
         <div className={styles.randomContentContainer}>
           <p className={styles.jokePrompt}>Okay here goes.</p>
-          <p className={styles.jokeText}>"{this.props.randomJoke}"</p>
+          <p className={styles.jokeText}>{this.props.randomJoke}</p>
           <div className={styles.randomButtonWrapper}>
             <Button
               type='navigation'

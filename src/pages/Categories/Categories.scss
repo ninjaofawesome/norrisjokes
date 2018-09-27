@@ -11,8 +11,16 @@
 
 .categories-list-container,
 .categories-button-wrapper {
-  width: 125px;
+  width: 150px;
   margin: 0 auto;
+}
+
+.categories-list {
+  padding-left: 0;
+}
+
+.categories-list-item {
+  list-style-type: none;
 }
 
 @media #{$tablet} {

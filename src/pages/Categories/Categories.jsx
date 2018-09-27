@@ -55,7 +55,10 @@ class CategoriesPage extends Component {
 
     if (categories.length > 0) {
       return categories.map((item, index) => (
-        <li key={`category-${index}`}>
+        <li 
+          key={`category-${index}`} 
+          className={styles.categoriesListItem}
+        >
           <Button
             type='action'
             content={item}
@@ -77,7 +80,7 @@ class CategoriesPage extends Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <ul className={styles.appList}>
+          <ul className={styles.categoriesList}>
             {this.showJokeCategories()}
           </ul>
           <Button
@@ -104,11 +107,11 @@ class CategoriesPage extends Component {
           />
         </div>
         <div className={styles.categoriesContentContainer}>
-          <p>Did you know that there are <span className={styles.boldText}>sixteen</span> different categories of Chuck Norris jokes to choose from?  It's true!  They are:</p>
+          <p>There are <span className={styles.boldText}>sixteen</span> different categories of Chuck Norris jokes to choose from?  It's true!  Choose one from the menu to see a custom joke.</p>
           <div className={styles.categoriesButtonWrapper}>
             <Button
               type='action'
-              content='Home'
+              content='Jokes'
               color='black'
               action={this.openModal}
             />

@@ -49,8 +49,14 @@ $buttonProps: (
 
 .categories-list-container,
 .categories-button-wrapper {
-  width: 125px;
+  width: 150px;
   margin: 0 auto; }
+
+.categories-list {
+  padding-left: 0; }
+
+.categories-list-item {
+  list-style-type: none; }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   .categories-page-container {
