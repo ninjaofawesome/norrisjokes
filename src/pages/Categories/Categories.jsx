@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
+import cx from 'classnames';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { handleResponse } from '../../utils/helperFunctions.js';
 import { 
   populateCategories,
@@ -11,6 +13,13 @@ import {
 import { customStyles } from '../../utils/modalHelper.js';
 
 import styles from './Categories.css';
+
+const jokeVisibility = props => {
+  return cx({
+    [styles.showJoke]: props.category !== '',
+    [styles.hideJoke]: props.category === '',
+  })
+}
 
 class CategoriesPage extends Component {
 
@@ -47,6 +56,11 @@ class CategoriesPage extends Component {
     this.setState({modalIsOpen: false});
   }
 
+  setJoke(item) {
+    this.props.dispatch(chooseCategory(item));
+    this.closeModal();
+  }
+
   populateCategories() {
     const {
       categories,
@@ -62,7 +76,7 @@ class CategoriesPage extends Component {
             className={styles.categoriesMenuItem}
             role='button'
             tabIndex={0}
-            onClick={() => this.props.dispatch(chooseCategory(item))}
+            onClick={() => this.setJoke(item)}
           >
             {item}
           </div>
@@ -96,6 +110,7 @@ class CategoriesPage extends Component {
   }
 
   render() {
+    console.log('state', this.state);
     return (
       <div className={styles.categoriesPageContainer}>
         {this.modalComponent()}
@@ -115,7 +130,10 @@ class CategoriesPage extends Component {
               content='Jokes'
               color='black'
               action={this.openModal}
-            />
+            />     
+          </div>
+          <div className={jokeVisibility(this.props)}>
+            <div>Hello World</div>
           </div>
         </div>
       </div>
@@ -126,6 +144,7 @@ class CategoriesPage extends Component {
 const mapStateToProps = state => {
   return {
     categories: state.reducers.categories.categoryList,
+    category: state.reducers.categories.category,
   }
 }
 

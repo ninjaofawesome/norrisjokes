@@ -37,6 +37,20 @@
   }
 }
 
+.categories-joke-wrapper {
+  width: 100%;
+  height: auto;
+  margin-top: $medium;
+}
+
+.show-joke {
+  display: block;
+}
+
+.hide-joke {
+  display: none;
+}
+
 @media #{$tablet} {
   .categories-page-container {
     @include GridSystem($tabletGrid);
