@@ -20,7 +20,10 @@ export const populateJokes = data => ({
   joke: data,
 });
 
-export const categoryJoke = data => ({
-  type: GET_CATEGORY_JOKE,
-  categoryJoke: data,
-})
+export const categoryJoke = data => {
+  console.log(data)
+  return ({
+    type: GET_CATEGORY_JOKE,
+    categoryJoke: data,
+  })
+};

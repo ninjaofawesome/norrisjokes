@@ -66,18 +66,21 @@ class CategoriesPage extends Component {
     this.setState({modalIsOpen: false});
   }
 
-  setJoke(item) {
-    const url = `https://api.chucknorris.io/jokes/random?category={${item}}`;
-    this.props.dispatch(chooseCategory(item));
-    this.closeModal();
-
+  populateJoke() {
+    const url = `https://api.chucknorris.io/jokes/random?category={${this.props.category}}`;
     fetch(url)
     .then(handleResponse)
     .then(data => {
+      console.log(data);
        this.props.dispatch(categoryJoke(data))
     })
     .catch(error => console.log(error));
+  }
 
+
+  setJoke(item) {
+    this.props.dispatch(chooseCategory(item));
+    this.closeModal();
   }
 
   populateCategories() {
