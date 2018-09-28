@@ -9,6 +9,7 @@ import { handleResponse } from '../../utils/helperFunctions.js';
 import { 
   populateCategories,
   chooseCategory, 
+  categoryJoke,
 } from '../../actions/actions';
 import { customStyles } from '../../utils/modalHelper.js';
 
@@ -47,6 +48,15 @@ class CategoriesPage extends Component {
     .catch(error => console.log(error));
   }
 
+  getCategoryJoke() {
+    fetch('https://api.chucknorris.io/jokes/categories')
+    .then(handleResponse)
+    .then(data => {
+       this.props.dispatch(populateCategories(data))
+    })
+    .catch(error => console.log(error));
+  }
+
   
   openModal() {
     this.setState({modalIsOpen: true});
@@ -57,8 +67,17 @@ class CategoriesPage extends Component {
   }
 
   setJoke(item) {
+    const url = `https://api.chucknorris.io/jokes/random?category={${item}}`;
     this.props.dispatch(chooseCategory(item));
     this.closeModal();
+
+    fetch(url)
+    .then(handleResponse)
+    .then(data => {
+       this.props.dispatch(categoryJoke(data))
+    })
+    .catch(error => console.log(error));
+
   }
 
   populateCategories() {
@@ -110,7 +129,6 @@ class CategoriesPage extends Component {
   }
 
   render() {
-    console.log('state', this.state);
     return (
       <div className={styles.categoriesPageContainer}>
         {this.modalComponent()}
@@ -133,7 +151,7 @@ class CategoriesPage extends Component {
             />     
           </div>
           <div className={jokeVisibility(this.props)}>
-            <div>Hello World</div>
+            <div>{this.props.joke}</div>
           </div>
         </div>
       </div>
@@ -145,6 +163,7 @@ const mapStateToProps = state => {
   return {
     categories: state.reducers.categories.categoryList,
     category: state.reducers.categories.category,
+    joke: state.reducers.jokes.categoryJoke,
   }
 }
 

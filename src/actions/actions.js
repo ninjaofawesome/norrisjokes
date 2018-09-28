@@ -3,6 +3,7 @@ import { handleResponse } from '../utils/helperFunctions.js';
 export const GET_RANDOM_CATEGORIES = 'GET_RANDOM_CATEGORIES';
 export const GET_RANDOM_JOKE = 'GET_RANDOM_JOKE';
 export const CHOOSE_CATEGORY = 'CHOOSE_CATEGORY';
+export const GET_CATEGORY_JOKE = 'GET_CATEGORY_JOKE';
 
 export const populateCategories = data => ({
   type: GET_RANDOM_CATEGORIES,
@@ -19,14 +20,7 @@ export const populateJokes = data => ({
   joke: data,
 });
 
-export const fetchJokes = () => {
-  const url = 'https://api.chucknorris.io/jokes/random';
-  return(
-    fetch(url)
-    .then(handleResponse)
-    .then(data => {
-      return dispatch => populateJokes(data);   
-    })
-    .catch(error => console.log('something went wrong!', error))
-  );  
-};
+export const categoryJoke = data => ({
+  type: GET_CATEGORY_JOKE,
+  categoryJoke: data,
+})
