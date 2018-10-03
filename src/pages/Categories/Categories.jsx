@@ -5,6 +5,7 @@ import cx from 'classnames';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import TextBox from '../../components/TextBox/TextBox';
 import { handleResponse } from '../../utils/helperFunctions.js';
 import { 
   populateCategories,
@@ -24,8 +25,8 @@ const jokeVisibility = props => {
 
 class CategoriesPage extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       modalIsOpen: false,
@@ -47,16 +48,6 @@ class CategoriesPage extends Component {
     })
     .catch(error => console.log(error));
   }
-
-  getCategoryJoke() {
-    fetch('https://api.chucknorris.io/jokes/categories')
-    .then(handleResponse)
-    .then(data => {
-       this.props.dispatch(populateCategories(data))
-    })
-    .catch(error => console.log(error));
-  }
-
   
   openModal() {
     this.setState({modalIsOpen: true});
@@ -66,13 +57,11 @@ class CategoriesPage extends Component {
     this.setState({modalIsOpen: false});
   }
 
-  populateJoke() {
-    const url = `https://api.chucknorris.io/jokes/random?category={${this.props.category}}`;
+  populateJoke(url) {
     fetch(url)
     .then(handleResponse)
     .then(data => {
-      console.log(data);
-       this.props.dispatch(categoryJoke(data))
+       this.props.dispatch(populateCategories(data))
     })
     .catch(error => console.log(error));
   }
@@ -132,6 +121,7 @@ class CategoriesPage extends Component {
   }
 
   render() {
+    const url = `https://api.chucknorris.io/jokes/random?category={${this.props.chosen}}`;
     return (
       <div className={styles.categoriesPageContainer}>
         {this.modalComponent()}
@@ -154,7 +144,7 @@ class CategoriesPage extends Component {
             />     
           </div>
           <div className={jokeVisibility(this.props)}>
-            <div>{this.props.joke}</div>
+            <TextBox />
           </div>
         </div>
       </div>
@@ -165,7 +155,7 @@ class CategoriesPage extends Component {
 const mapStateToProps = state => {
   return {
     categories: state.reducers.categories.categoryList,
-    category: state.reducers.categories.category,
+    chosen: state.reducers.categories.category,
     joke: state.reducers.jokes.categoryJoke,
   }
 }

@@ -10,10 +10,13 @@ export const populateCategories = data => ({
   categoryList: data,
 });
 
-export const chooseCategory = data => ({
-  type: CHOOSE_CATEGORY,
-  category: data,
-})
+export const chooseCategory = data => {
+  return {
+    type: CHOOSE_CATEGORY,
+    category: data,
+  }
+};
+
 
 export const populateJokes = data => ({
   type: GET_RANDOM_JOKE,
@@ -21,7 +24,7 @@ export const populateJokes = data => ({
 });
 
 export const categoryJoke = data => {
-  console.log(data)
+  console.log('action category joke', data)
   return ({
     type: GET_CATEGORY_JOKE,
     categoryJoke: data,

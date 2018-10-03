@@ -21,7 +21,7 @@ export const categoriesReducer = (state = initialCategoryState, action) => {
   case 'GET_RANDOM_CATEGORIES':
     return Object.assign({}, state, {categoryList: action.categoryList});
   case 'CHOOSE_CATEGORY':
-    return Object.assign({}, state, {category: action.category});
+    return Object.assign({}, state, { category: action.category });
   default:
    return state;
  }
@@ -30,9 +30,10 @@ export const categoriesReducer = (state = initialCategoryState, action) => {
 export const jokesReducer = (state = initialJokeState, action) => {
  switch (action.type) {
   case 'GET_RANDOM_JOKE':
-   return Object.assign({}, state, { randomJoke: action.joke });
+    return Object.assign({}, state, { randomJoke: action.joke });
   case 'GET_CATEGORY_JOKE':
-   return Object.assign({}, state, { categoryJoke: action.categoryJoke });
+    console.log('reducer categoryJoke', action.categoryJoke)
+    return Object.assign({}, state, { categoryJoke: action.categoryJoke });
   default:
    return state;
  }
