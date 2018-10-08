@@ -1,6 +1,6 @@
 
 // if response is JSON
-const handleJSONResponse = (response) => {
+const handleJSONResponse = response => {
   return response.json()
   .then(json => {
     if (response.ok) {
@@ -15,7 +15,7 @@ const handleJSONResponse = (response) => {
 };
 
 // if response is XML
-const handleTextResponse = (response) => {
+const handleTextResponse = response => {
   return response.text()
   .then(text => {
     if (response.ok) {

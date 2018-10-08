@@ -10,24 +10,24 @@ import {
 import styles from './TextBox.css';
 
 class TextBox extends Component {
-  componentWillMount(){
-    this.populateJoke();
-  }
 
-  populateJoke(url) {
-    const categoryURL = this.props.chosen !== '' ? `https://api.chucknorris.io/jokes/random?category={${this.props.chosen}}`: ''; 
+  populateJoke() {
+    const categoryURL = `https://api.chucknorris.io/jokes/random?category={${this.props.chosen}}`; 
+    console.log('categoryURL', categoryURL);
+
      fetch(categoryURL)
     .then(handleResponse)
     .then(data => {
-       this.props.dispatch(populateCategories(data))
+       this.props.dispatch(categoryJoke(data))
     })
     .catch(error => console.log(error));
   }
 
   render() {
+    console.log('chosen', this.props.chosen)
     return (
       <div className={styles.textBoxWrapper}>
-        {this.props.chosen}
+        {this.props.chosen !== '' ? this.populateJoke() : ''}
       </div>
     );
   }
