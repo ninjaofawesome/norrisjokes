@@ -21,7 +21,7 @@ const jokeVisibility = props => {
     [styles.showJoke]: props.category !== '',
     [styles.hideJoke]: props.category === '',
   })
-}
+};
 
 class CategoriesPage extends Component {
 
@@ -57,19 +57,8 @@ class CategoriesPage extends Component {
     this.setState({modalIsOpen: false});
   }
 
-  populateJoke(url) {
-    fetch(url)
-    .then(handleResponse)
-    .then(data => {
-       this.props.dispatch(populateCategories(data))
-    })
-    .catch(error => console.log(error));
-  }
-
-
   setJoke(item) {
     this.props.dispatch(chooseCategory(item));
-    this.closeModal();
   }
 
   populateCategories() {
@@ -77,23 +66,21 @@ class CategoriesPage extends Component {
       categories,
     } = this.props;
 
-    if (categories.length > 0) {
-      return categories.map((item, index) => (
-        <li 
-          key={`category-${index}`} 
-          className={styles.categoriesListItem}
+    return categories.map((item, index) => (
+      <li 
+        key={`category-${index}`} 
+        className={styles.categoriesListItem}
+      >
+        <div 
+          className={styles.categoriesMenuItem}
+          role='button'
+          tabIndex={0}
+          onClick={() => this.setJoke(item)}
         >
-          <div 
-            className={styles.categoriesMenuItem}
-            role='button'
-            tabIndex={0}
-            onClick={() => this.setJoke(item)}
-          >
-            {item}
-          </div>
-        </li>
-      ))
-    }
+          {item}
+        </div>
+      </li>
+    ))
   }
 
   modalComponent() {
@@ -107,7 +94,7 @@ class CategoriesPage extends Component {
           contentLabel="Example Modal"
         >
           <ul className={styles.categoriesList}>
-            {this.populateCategories()}
+            { this.props.categories === [] || this.props.categories === undefined ? <LoadingSpinner /> : this.populateCategories() }
           </ul>
           <Button
             type='action'
@@ -121,7 +108,6 @@ class CategoriesPage extends Component {
   }
 
   render() {
-    const url = `https://api.chucknorris.io/jokes/random?category={${this.props.chosen}}`;
     return (
       <div className={styles.categoriesPageContainer}>
         {this.modalComponent()}

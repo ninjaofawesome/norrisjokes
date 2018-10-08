@@ -16,8 +16,7 @@ class TextBox extends Component {
 
   populateJoke(url) {
     const categoryURL = this.props.chosen !== '' ? `https://api.chucknorris.io/jokes/random?category={${this.props.chosen}}`: ''; 
-    console.log('url', categoryURL);
-    fetch(categoryURL)
+     fetch(categoryURL)
     .then(handleResponse)
     .then(data => {
        this.props.dispatch(populateCategories(data))
