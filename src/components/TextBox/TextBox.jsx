@@ -13,14 +13,22 @@ class TextBox extends Component {
 
   populateJoke() {
     const categoryURL = `https://api.chucknorris.io/jokes/random?category={${this.props.chosen}}`; 
-    console.log('categoryURL', categoryURL);
 
-     fetch(categoryURL)
-    .then(handleResponse)
-    .then(data => {
-       this.props.dispatch(categoryJoke(data))
-    })
-    .catch(error => console.log(error));
+    const myHeaders = new Headers();
+    myHeaders.set('Content-Type', 'application/json');
+
+    const myInit = { method: 'GET',
+                   headers: myHeaders,
+                   mode: 'cors',
+                   cache: 'default' };
+
+    const myRequest = new Request(categoryURL, myInit);
+
+    console.log('headers', myHeaders )
+
+    fetch(myRequest)
+    .then( response => console.log('response', response))
+    .catch(error => console.log('error', error));
   }
 
   render() {
